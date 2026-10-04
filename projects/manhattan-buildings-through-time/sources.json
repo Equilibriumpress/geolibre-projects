@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "id": "upstream-geolibre-demo",
+      "name": "Manhattan Buildings Through Time · official GeoLibre demo project",
+      "publisher": "OpenGeoS / GeoLibre",
+      "url": "https://github.com/opengeos/geolibre-assets/blob/main/projects/manhattan-buildings-through-time.geolibre.json",
+      "retrieved": "2026-10-04",
+      "license": "GeoLibre project example; see repository license and individual data-source terms",
+      "role": "Reference project for camera, styling, time range, time binding and visual treatment."
+    },
+    {
+      "id": "nyc-building-footprints",
+      "name": "Building Footprints",
+      "publisher": "NYC Open Data / NYC Office of Technology and Innovation",
+      "url": "https://data.cityofnewyork.us/City-Government/Building-Footprints/5zhs-2jue",
+      "retrieved": "2026-10-04",
+      "license": "NYC Open Data Terms of Use",
+      "role": "Building geometry, surveyed roof height and construction year for Lower and Midtown Manhattan."
+    },
+    {
+      "id": "mta-subway-lines",
+      "name": "MTA Subway Lines",
+      "publisher": "Metropolitan Transportation Authority / New York State Open Data",
+      "url": "https://data.ny.gov/Transportation/MTA-Subway-Lines/3qz8-muuu",
+      "retrieved": "2026-10-04",
+      "license": "New York State Open Data terms",
+      "role": "Subway line context."
+    },
+    {
+      "id": "mta-subway-stations",
+      "name": "MTA Subway Stations",
+      "publisher": "Metropolitan Transportation Authority / New York State Open Data",
+      "url": "https://data.ny.gov/Transportation/MTA-Subway-Stations/39hk-dx4f",
+      "retrieved": "2026-10-04",
+      "license": "New York State Open Data terms",
+      "role": "Subway station context."
+    },
+    {
+      "id": "upstream-video",
+      "name": "NYC buildings through time · GeoLibre WebM",
+      "publisher": "OpenGeoS / GeoLibre",
+      "url": "https://github.com/opengeos/geolibre-assets/blob/main/demos/nyc-buildings.webm",
+      "retrieved": "2026-10-04",
+      "license": "See GeoLibre assets repository and source-data terms",
+      "role": "Reference render showing the official GeoLibre Time Slider animation."
+    }
+  ]
+}

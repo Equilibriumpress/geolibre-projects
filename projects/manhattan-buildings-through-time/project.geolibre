@@ -1,0 +1,596 @@
+{
+  "version": "0.1.0",
+  "name": "Manhattan Buildings Through Time",
+  "mapView": {
+    "center": [
+      -73.99713346883789,
+      40.71909687183796
+    ],
+    "zoom": 14.27270065587906,
+    "bearing": 7.136296468210958,
+    "pitch": 59.5
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/dark",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "layers": [
+    {
+      "id": "manhattan-buildings",
+      "name": "Manhattan buildings by construction era",
+      "type": "vector-tiles",
+      "source": {
+        "type": "vector",
+        "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=height_roof%3E0%20AND%20within_box(the_geom%2C40.770%2C-74.020%2C40.700%2C-73.965)&%24limit=50000"
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#94a3b8",
+        "strokeColor": "#111827",
+        "strokeWidth": 0.5,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.78,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0,
+        "extrusionEnabled": true,
+        "extrusionColor": "#94a3b8",
+        "extrusionOpacity": 0.88,
+        "extrusionHeightProperty": "height_roof",
+        "extrusionHeightScale": 0.3048,
+        "extrusionBase": 0,
+        "extrusionAdvancedStyleEnabled": true,
+        "extrusionColorExpression": "[\"case\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1900],\"#7c2d12\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1930],\"#b45309\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1950],\"#d97706\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1980],\"#94a3b8\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2000],\"#60a5fa\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2015],\"#22d3ee\",\"#a5f3fc\"]",
+        "extrusionHeightExpression": "[\"*\",[\"to-number\",[\"get\",\"height_roof\"],0],0.3048]",
+        "vectorStyleMode": "expression",
+        "vectorStyleExpression": "[\"case\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1900],\"#7c2d12\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1930],\"#b45309\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1950],\"#d97706\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1980],\"#94a3b8\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2000],\"#60a5fa\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2015],\"#22d3ee\",\"#a5f3fc\"]"
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": false,
+        "nativeLayerIds": [],
+        "sourceIds": [
+          "manhattan-buildings-source"
+        ],
+        "vectorSource": "url",
+        "vectorState": {
+          "renderMode": "tiles",
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": true,
+          "style": {
+            "fillColor": "#94a3b8",
+            "fillOpacity": 0.78,
+            "lineColor": "#111827",
+            "lineWidth": 0.5,
+            "fillColorExpression": [
+              "case",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1900
+              ],
+              "#7c2d12",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1930
+              ],
+              "#b45309",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1950
+              ],
+              "#d97706",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1980
+              ],
+              "#94a3b8",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                2000
+              ],
+              "#60a5fa",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                2015
+              ],
+              "#22d3ee",
+              "#a5f3fc"
+            ],
+            "extrusionEnabled": true,
+            "extrusionColor": "#94a3b8",
+            "extrusionColorExpression": [
+              "case",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1900
+              ],
+              "#7c2d12",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1930
+              ],
+              "#b45309",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1950
+              ],
+              "#d97706",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                1980
+              ],
+              "#94a3b8",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                2000
+              ],
+              "#60a5fa",
+              [
+                "<",
+                [
+                  "to-number",
+                  [
+                    "get",
+                    "construction_year"
+                  ],
+                  0
+                ],
+                2015
+              ],
+              "#22d3ee",
+              "#a5f3fc"
+            ],
+            "extrusionOpacity": 0.88,
+            "extrusionBase": 0,
+            "extrusionHeight": [
+              "*",
+              [
+                "to-number",
+                [
+                  "get",
+                  "height_roof"
+                ],
+                0
+              ],
+              0.3048
+            ]
+          }
+        },
+        "timeBinding": {
+          "property": "construction_year",
+          "valueKind": "year",
+          "min": -3786825600000,
+          "max": 1735689600000,
+          "granularity": "year",
+          "window": {
+            "unit": "year",
+            "before": 0,
+            "after": 1
+          },
+          "cumulative": true
+        },
+        "provenance": "sources.json"
+      },
+      "sourcePath": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=height_roof%3E0%20AND%20within_box(the_geom%2C40.770%2C-74.020%2C40.700%2C-73.965)&%24limit=50000",
+      "popup": {
+        "hover": true,
+        "fields": [
+          {
+            "field": "name",
+            "label": "Name",
+            "hover": true
+          },
+          {
+            "field": "construction_year",
+            "label": "Built",
+            "hover": true
+          },
+          {
+            "field": "height_roof",
+            "label": "Roof height",
+            "kind": "number",
+            "format": {
+              "decimals": 0,
+              "suffix": " ft"
+            },
+            "hover": true
+          },
+          {
+            "field": "ground_elevation",
+            "label": "Ground elevation",
+            "kind": "number",
+            "format": {
+              "decimals": 0,
+              "suffix": " ft"
+            },
+            "hover": true
+          },
+          {
+            "field": "bin",
+            "label": "Building ID (BIN)",
+            "hover": true
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    },
+    {
+      "id": "mta-subway-lines",
+      "name": "NYC Subway Lines (MTA)",
+      "type": "vector-tiles",
+      "source": {
+        "type": "vector",
+        "url": "https://data.ny.gov/resource/s692-irgq.geojson?%24limit=60"
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#e5e7eb",
+        "strokeColor": "#e5e7eb",
+        "strokeWidth": 2.5,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": false,
+        "nativeLayerIds": [],
+        "sourceIds": [
+          "mta-subway-lines-source"
+        ],
+        "vectorSource": "url",
+        "vectorState": {
+          "renderMode": "tiles",
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": true,
+          "style": {
+            "lineColor": "#e5e7eb",
+            "lineWidth": 2.5
+          }
+        },
+        "provenance": "sources.json"
+      },
+      "sourcePath": "https://data.ny.gov/resource/s692-irgq.geojson?%24limit=60",
+      "popup": {
+        "hover": true,
+        "fields": [
+          {
+            "field": "name",
+            "label": "Line",
+            "hover": true
+          },
+          {
+            "field": "route_id",
+            "label": "Route",
+            "hover": true
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    },
+    {
+      "id": "mta-subway-stations",
+      "name": "NYC Subway Stations (MTA)",
+      "type": "vector-tiles",
+      "source": {
+        "type": "vector",
+        "url": "https://data.ny.gov/resource/39hk-dx4f.geojson?%24limit=600"
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#22c55e",
+        "strokeColor": "#0f172a",
+        "strokeWidth": 1.5,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.9,
+        "circleRadius": 4,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": false,
+        "nativeLayerIds": [],
+        "sourceIds": [
+          "mta-subway-stations-source"
+        ],
+        "vectorSource": "url",
+        "vectorState": {
+          "renderMode": "tiles",
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": true,
+          "style": {
+            "circleColor": "#22c55e",
+            "circleRadius": 4,
+            "circleOpacity": 0.9
+          }
+        },
+        "provenance": "sources.json"
+      },
+      "sourcePath": "https://data.ny.gov/resource/39hk-dx4f.geojson?%24limit=600",
+      "popup": {
+        "hover": true,
+        "titleField": "stop_name",
+        "fields": [
+          {
+            "field": "stop_name",
+            "label": "Station",
+            "hover": true
+          },
+          {
+            "field": "daytime_routes",
+            "label": "Routes",
+            "hover": true
+          },
+          {
+            "field": "borough",
+            "label": "Borough",
+            "hover": true
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    }
+  ],
+  "styles": {
+    "manhattan-buildings": {
+      "minZoom": 0,
+      "maxZoom": 24,
+      "fillColor": "#94a3b8",
+      "strokeColor": "#111827",
+      "strokeWidth": 0.5,
+      "strokeWidthUnit": "pixels",
+      "fillOpacity": 0.78,
+      "circleRadius": 6,
+      "rasterBrightnessMin": 0,
+      "rasterBrightnessMax": 1,
+      "rasterSaturation": 0,
+      "rasterContrast": 0,
+      "rasterHueRotate": 0,
+      "extrusionEnabled": true,
+      "extrusionColor": "#94a3b8",
+      "extrusionOpacity": 0.88,
+      "extrusionHeightProperty": "height_roof",
+      "extrusionHeightScale": 0.3048,
+      "extrusionBase": 0,
+      "extrusionAdvancedStyleEnabled": true,
+      "extrusionColorExpression": "[\"case\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1900],\"#7c2d12\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1930],\"#b45309\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1950],\"#d97706\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1980],\"#94a3b8\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2000],\"#60a5fa\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2015],\"#22d3ee\",\"#a5f3fc\"]",
+      "extrusionHeightExpression": "[\"*\",[\"to-number\",[\"get\",\"height_roof\"],0],0.3048]",
+      "vectorStyleMode": "expression",
+      "vectorStyleExpression": "[\"case\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1900],\"#7c2d12\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1930],\"#b45309\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1950],\"#d97706\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],1980],\"#94a3b8\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2000],\"#60a5fa\",[\"<\",[\"to-number\",[\"get\",\"construction_year\"],0],2015],\"#22d3ee\",\"#a5f3fc\"]"
+    },
+    "mta-subway-lines": {
+      "minZoom": 0,
+      "maxZoom": 24,
+      "fillColor": "#e5e7eb",
+      "strokeColor": "#e5e7eb",
+      "strokeWidth": 2.5,
+      "strokeWidthUnit": "pixels",
+      "fillOpacity": 0,
+      "circleRadius": 6,
+      "rasterBrightnessMin": 0,
+      "rasterBrightnessMax": 1,
+      "rasterSaturation": 0,
+      "rasterContrast": 0,
+      "rasterHueRotate": 0
+    },
+    "mta-subway-stations": {
+      "minZoom": 0,
+      "maxZoom": 24,
+      "fillColor": "#22c55e",
+      "strokeColor": "#0f172a",
+      "strokeWidth": 1.5,
+      "strokeWidthUnit": "pixels",
+      "fillOpacity": 0.9,
+      "circleRadius": 4,
+      "rasterBrightnessMin": 0,
+      "rasterBrightnessMax": 1,
+      "rasterSaturation": 0,
+      "rasterContrast": 0,
+      "rasterHueRotate": 0
+    }
+  },
+  "preferences": {
+    "map": {
+      "restrictBounds": false,
+      "bounds": [
+        -180,
+        -85,
+        180,
+        85
+      ],
+      "minZoom": 0,
+      "maxZoom": 24,
+      "maxPitch": 85,
+      "renderWorldCopies": true,
+      "projection": "globe",
+      "ellipsoidId": "earth",
+      "scaleUnit": "metric"
+    },
+    "environmentVariables": [],
+    "geocoding": {
+      "providerId": "nominatim",
+      "apiKeys": {}
+    }
+  },
+  "plugins": {
+    "manifestUrls": [],
+    "activePluginIds": [
+      "maplibre-layer-control",
+      "maplibre-gl-basemap-control",
+      "maplibre-atmosphere-effects",
+      "maplibre-deckgl-viz",
+      "maplibre-gl-time-slider"
+    ],
+    "mapControlPositions": {
+      "maplibre-layer-control": "top-right",
+      "maplibre-gl-basemap-control": "top-left",
+      "maplibre-gl-time-slider": "bottom-left"
+    },
+    "settings": {
+      "maplibre-gl-time-slider": {
+        "startDate": "1850-01-01T00:00:00.000Z",
+        "endDate": "2025-01-01T00:00:00.000Z",
+        "interval": 5,
+        "granularity": "year",
+        "granularities": [
+          "year"
+        ],
+        "currentDate": "2025-01-01T00:00:00.000Z",
+        "speed": 600,
+        "loop": true,
+        "autoPlay": false,
+        "collapsed": false,
+        "theme": "dark",
+        "sources": []
+      }
+    }
+  },
+  "legend": {
+    "title": "Manhattan & subways",
+    "groupByLayer": true,
+    "order": [],
+    "overrides": {},
+    "panelVisible": true,
+    "panelPosition": "bottom-left"
+  },
+  "metadata": {
+    "description": "Manhattan building footprints extruded to surveyed roof height and replayed cumulatively by construction year from 1850 to 2025, with MTA subway context. Adapted from the official GeoLibre Manhattan Buildings Through Time demo using authoritative public NYC and MTA sources.",
+    "upstreamProject": "https://github.com/opengeos/geolibre-assets/blob/main/projects/manhattan-buildings-through-time.geolibre.json",
+    "upstreamVideo": "https://assets.geolibre.app/demos/nyc-buildings.webm"
+  }
+}
