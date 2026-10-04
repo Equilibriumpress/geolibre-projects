@@ -254,6 +254,35 @@
                 }
               ]
             }
+          },
+          "image": {
+            "type": "string",
+            "minLength": 1
+          },
+          "routeLayerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "routeFollow": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "samples": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 48
+              },
+              "zoom": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 24
+              },
+              "pitch": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 85
+              }
+            }
           }
         }
       }
