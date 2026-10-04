@@ -310,6 +310,8 @@ for (const slug of projectDirs) {
     const validSceneTypes = new Set(["title", "map", "highlight", "chart", "kpi", "comparison", "conclusion", "cta"]);
     const validPresets = new Set(["tiktok", "reel", "short", "square", "standard", "custom"]);
     const validRatios = new Set(["9:16", "1:1", "16:9"]);
+    const projectLayerIds = new Set((geolibre?.layers ?? []).map((layer) => layer?.id).filter(Boolean));
+    const storyChapterIds = new Set((geolibre?.storymap?.chapters ?? []).map((chapter) => chapter?.id).filter(Boolean));
     if (videoStory.version !== "0.1.0") fail(errors, slug, "video-story.json version must be 0.1.0");
     if (!validPresets.has(videoStory.preset)) fail(errors, slug, "video-story.json preset is invalid");
     if (!validRatios.has(videoStory.aspectRatio)) fail(errors, slug, "video-story.json aspectRatio is invalid");
@@ -328,6 +330,15 @@ for (const slug of projectDirs) {
         if (!validSceneTypes.has(scene?.type)) fail(errors, slug, `${prefix}.type is invalid`);
         if (!Number.isInteger(scene?.durationMs) || scene.durationMs < 500 || scene.durationMs > 20000) {
           fail(errors, slug, `${prefix}.durationMs must be 500..20000`);
+        }
+        if (scene?.routeFollow !== undefined && !scene?.routeLayerId) {
+          fail(errors, slug, `${prefix}.routeFollow requires routeLayerId`);
+        }
+        if (scene?.routeLayerId && !projectLayerIds.has(scene.routeLayerId)) {
+          fail(errors, slug, `${prefix}.routeLayerId references unknown layer ${scene.routeLayerId}`);
+        }
+        if (scene?.sourceStoryChapterId && !storyChapterIds.has(scene.sourceStoryChapterId)) {
+          fail(errors, slug, `${prefix}.sourceStoryChapterId references unknown chapter ${scene.sourceStoryChapterId}`);
         }
       }
     }
