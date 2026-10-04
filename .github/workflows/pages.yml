@@ -1,124 +1,30 @@
-name: Publish projects
+name: Validate projects and redirect former website
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 concurrency:
-  group: public-projects-pages
-  cancel-in-progress: false
+  group: public-project-checks-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: npm
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.12'
-      - name: Read immutable app release
-        id: app
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          revision=$(jq -r .revision app-release.json)
-          repository=$(jq -r .sourceRepository app-release.json)
-          tag=$(jq -r .tag app-release.json)
-          [[ "$revision" =~ ^[a-f0-9]{40}$ ]]
-          [[ "$repository" == 'Equilibriumpress/GeoLibre' ]]
-          [[ "$tag" == "app-$revision" ]]
-          echo "revision=$revision" >> "$GITHUB_OUTPUT"
-          echo "repository=$repository" >> "$GITHUB_OUTPUT"
-          echo "tag=$tag" >> "$GITHUB_OUTPUT"
-          if gh release view "$tag" >/dev/null 2>&1; then
-            echo 'bootstrap=false' >> "$GITHUB_OUTPUT"
-          else
-            echo 'bootstrap=true' >> "$GITHUB_OUTPUT"
-          fi
-      - name: Bootstrap compiled app from public source once
-        if: steps.app.outputs.bootstrap == 'true'
-        uses: actions/checkout@v7
-        with:
-          repository: ${{ steps.app.outputs.repository }}
-          ref: ${{ steps.app.outputs.revision }}
-          path: app-source
-          persist-credentials: false
-      - name: Build the initial app release
-        if: steps.app.outputs.bootstrap == 'true'
-        env:
-          GEOLIBRE_APP_BASE: ./
-          APP_REVISION: ${{ steps.app.outputs.revision }}
-        run: |
-          set -euo pipefail
-          python -m pip install -r app-source/apps/geolibre-desktop/jupyterlite/requirements.txt
-          cd app-source
-          npm ci
-          npm run build -w geolibre-desktop
-          cp LICENSE apps/geolibre-desktop/dist/LICENSE.txt
-          printf '{"revision":"%s"}\n' "$APP_REVISION" > apps/geolibre-desktop/dist/app-build.json
-          tar -czf ../geolibre-web.tar.gz -C apps/geolibre-desktop/dist .
-          cd ..
-          sha256sum geolibre-web.tar.gz > geolibre-web.sha256
-      - name: Preserve public compiled app release
-        if: steps.app.outputs.bootstrap == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          APP_TAG: ${{ steps.app.outputs.tag }}
-          APP_REVISION: ${{ steps.app.outputs.revision }}
-        run: |
-          gh release create "$APP_TAG" geolibre-web.tar.gz geolibre-web.sha256 --target "$GITHUB_SHA" --title "GeoLibre web app $APP_REVISION" --notes "Compiled browser distribution. Source revision: $APP_REVISION. MIT license included. No application source is stored in this repository."
-      - name: Download the public app distribution
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          APP_TAG: ${{ steps.app.outputs.tag }}
-          APP_REVISION: ${{ steps.app.outputs.revision }}
-        run: |
-          set -euo pipefail
-          mkdir -p app-bundle
-          gh release download "$APP_TAG" --pattern 'geolibre-web.*' --dir app-bundle
-          cd app-bundle
-          sha256sum --check geolibre-web.sha256
-          mkdir dist
-          tar -xzf geolibre-web.tar.gz -C dist
-          test "$(jq -r .revision dist/app-build.json)" = "$APP_REVISION"
-          test -f dist/LICENSE.txt
-          test -f dist/jupyterlite/lab/index.html
-      - name: Validate and generate project pages
-        env:
-          GEOLIBRE_APP_REVISION: ${{ steps.app.outputs.revision }}
-        run: |
-          npm ci
-          npm run projects:validate
-          npm run projects:contracts
-          npm test
-          npm run projects:catalog
-          python -m pip install -r requirements-docs.txt
-          zensical build --strict
-      - name: Assemble and verify public site
-        run: |
-          mkdir -p site/demo site/outputs/rotterdam/video
-          cp -R app-bundle/dist/. site/demo/
-          cp projects/rotterdam-investment-priority/outputs/html/index.html site/outputs/rotterdam/index.html
-          cp projects/rotterdam-investment-priority/outputs/benchmark.json site/outputs/rotterdam/benchmark.json
-          cp projects/rotterdam-investment-priority/outputs/video/rotterdam-priority-tour.json site/outputs/rotterdam/video/rotterdam-priority-tour.json
-          python3 scripts/check-project-routes.py
-          node scripts/check-project-page-budget.mjs
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: site
-  deploy:
-    needs: build
+      - run: npm ci
+      - run: npm run projects:validate
+      - run: npm run projects:contracts
+      - run: npm test
+  redirect:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -126,8 +32,28 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - name: Deploy public projects
-        id: deployment
-        uses: actions/deploy-pages@v5
+      - uses: actions/checkout@v7
+      - name: Wait for restored private website
+        run: |
+          python3 - <<'CHECK'
+          import json, time, urllib.request
+          for attempt in range(60):
+              try:
+                  with urllib.request.urlopen('https://equilibriumpress.github.io/GeoLibre/publication.json', timeout=10) as response:
+                      publication = json.load(response)
+                  if publication.get('pagesBase') == 'https://equilibriumpress.github.io/GeoLibre/' and publication.get('repositoryUrl') == 'https://github.com/Equilibriumpress/geolibre-projects':
+                      break
+              except Exception:
+                  pass
+              time.sleep(10)
+          else:
+              raise SystemExit('Private website is not published yet; leave current public site in place')
+          CHECK
+      - run: python3 scripts/build-site-redirects.py
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5
+        id: deploy

@@ -22,6 +22,6 @@ const shapes = features.map(f => {
   return polygons.map(poly => `<path fill-rule="evenodd" d="${poly.map(ring => ring.map((p, i) => `${i ? "L" : "M"}${(xOffset + (p[0] * correction - west) * scale).toFixed(2)},${(yOffset + (north - p[1]) * scale).toFixed(2)}`).join(" ") + " Z").join(" ")}"/>`).join("");
 }).join("");
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img"><title>${escape(project.title)}: analysis extent</title><rect width="800" height="480" fill="#f5f8fa"/><text x="32" y="35" font-size="19" font-family="sans-serif" fill="#162d3a">${escape(project.location)} · ${project.analysisYear || "CBS"}</text><g fill="#087f8c" stroke="#f5f8fa" stroke-width="0.7">${shapes}</g><text x="32" y="448" font-size="14" font-family="sans-serif" fill="#334a55">CBS / PDOK · ${features.length} areas · Geometry preview, no indicator values</text><text x="32" y="470" font-size="12" font-family="sans-serif" fill="#334a55">Source retrieved ${new Date().toISOString().slice(0,10)} · CC BY 4.0</text></svg>`;
-await mkdir("docs/assets/projects", { recursive: true });
-await sharp(Buffer.from(svg)).png({ palette: true, colours: 32 }).toFile(path.join("docs/assets/projects", `${slug}.png`));
+await mkdir("projects", { recursive: true });
+await sharp(Buffer.from(svg)).png({ palette: true, colours: 32 }).toFile(path.join("projects", `${slug}/preview.png`));
 console.log(`Preview: ${slug}, ${features.length} areas`);
