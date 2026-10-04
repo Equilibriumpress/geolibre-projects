@@ -7,9 +7,9 @@
       "url": "https://www.nasjonaleturistveger.no/en/routes/geiranger--trollstigen/",
       "retrieved": "2026-10-04",
       "license": "Public route information; verify reuse terms for downloaded GPX",
-      "role": "Authoritative route length, endpoints, ferry information, seasonal notes and official viewpoints.",
+      "role": "Authoritative route geometry and published length.",
       "snapshot": null,
-      "notes": "The page links the official GPX. This first project stores a simplified authoring LineString through the published endpoints and viewpoints."
+      "notes": "Published route length: 104 km. The cleaned GPX measures 105.556 km, including detailed waypoint approaches. See original GPX and transformation recorded in the GPX source."
     },
     {
       "id": "official-route-gpx",
@@ -18,8 +18,9 @@
       "url": "https://www.nasjonaleturistveger.no/siteassets/turistvegene/08-geiranger---trollstigen/9-for-nedlasting/nasjonal_turistveg_geiranger-trollstigen.gpx",
       "retrieved": "2026-10-04",
       "license": "Refer to Norwegian Scenic Routes terms",
-      "role": "Authoritative navigation track referenced for future exact geometry replacement.",
-      "snapshot": null
+      "role": "Authoritative route geometry and published length.",
+      "snapshot": "official-route.gpx",
+      "notes": "Original GPX SHA-256: b1cb4a57f9dfbde773dd5b411e7f8cf801a28ae09c3714496d77cd182bbedc58. Contains 4831 track points and a duplicated return loop. For video, retain points [0:2591] + [3814:] (Python slicing). Join coordinates and both adjacent points match exactly. Retained coordinates are unchanged, yielding 3608 points and 105.556 km. Canonical geometry: route.geojson."
     },
     {
       "id": "commons-geirangerfjord",
@@ -29,17 +30,19 @@
       "retrieved": "2026-10-04",
       "license": "CC BY-SA 4.0",
       "role": "Story Map and video image for the Geiranger/Flydalsjuvet section.",
-      "snapshot": null
+      "snapshot": "flydalsjuvet.jpg",
+      "notes": "Local JPEG resized to 1200 pixels wide for preview and canvas recording. Original file and attribution are linked above."
     },
     {
       "id": "commons-ornesvingen",
       "name": "Ørnesvingen.JPG",
-      "publisher": "Wikimedia Commons",
+      "publisher": "Wikimedia Commons · Ximonic, Simo Räsänen",
       "url": "https://commons.wikimedia.org/wiki/File:%C3%98rnesvingen.JPG",
       "retrieved": "2026-10-04",
-      "license": "See Wikimedia Commons file page",
+      "license": "CC BY 2.5",
       "role": "Story Map and video image for Ørnesvingen.",
-      "snapshot": null
+      "snapshot": "ornesvingen.jpg",
+      "notes": "Local JPEG resized to 1200 pixels wide for preview and canvas recording. Original file and attribution are linked above."
     },
     {
       "id": "commons-gudbrandsjuvet",
@@ -49,7 +52,8 @@
       "retrieved": "2026-10-04",
       "license": "CC BY-SA 3.0 NO",
       "role": "Story Map and video image for Gudbrandsjuvet.",
-      "snapshot": null
+      "snapshot": "gudbrandsjuvet.jpg",
+      "notes": "Local JPEG resized to 1200 pixels wide for preview and canvas recording. Original file and attribution are linked above."
     },
     {
       "id": "commons-trollstigen",
@@ -59,7 +63,8 @@
       "retrieved": "2026-10-04",
       "license": "CC BY-SA 4.0",
       "role": "Story Map and video image for Trollstigen.",
-      "snapshot": null
+      "snapshot": "trollstigen.jpg",
+      "notes": "Local JPEG resized to 1200 pixels wide for preview and canvas recording. Original file and attribution are linked above."
     }
   ]
 }

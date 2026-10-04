@@ -281,6 +281,16 @@
                 "type": "number",
                 "minimum": 0,
                 "maximum": 85
+              },
+              "startFraction": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "endFraction": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             }
           }
