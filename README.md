@@ -1,25 +1,15 @@
-# GeoLibre projects
+# GeoLibre public projects
 
-Public research projects authored through ChatGPT and versioned in GitHub.
+Public project files, SQL, data provenance and results authored through ChatGPT.
 
-- [Project catalog](https://equilibriumpress.github.io/geolibre-projects/projects/)
-- [Web app](https://equilibriumpress.github.io/geolibre-projects/demo/)
-- Project files: `projects/<slug>/`
-- Source provenance: `sources.json`; calculations: `analysis.sql`
-- App source is maintained separately. This repository contains project and publication tooling, documentation, and public compiled app releases.
+[Open the project website](https://equilibriumpress.github.io/GeoLibre/projects/).
+
+The app and website source live in the private Equilibriumpress/GeoLibre repository. That repository builds and publishes the website, then the browser loads project files from this public repository.
 
 ## Update a project
 
-Follow AGENTS.md. Run `npm ci`, `npm run projects:validate`, `npm run projects:contracts`, and `npm run projects:catalog`. Submit a focused PR. The Pages workflow publishes each main revision.
+Follow AGENTS.md. Run `npm ci`, `npm run projects:validate`, `npm run projects:contracts`, and `npm test`. Merge a focused PR, then trigger the private GeoLibre pages.yml workflow through the GitHub connection to publish the project update.
 
-## App distribution
+Project files: projects/<slug>/. SQL: analysis.sql. Sources: sources.json. Results: outputs.json. Preview: preview.png. Authoring protocols: authoring/.
 
-`app-release.json` selects an immutable compiled web app release hosted in this public repository. Project publishing downloads that release without access to the app source repository. The initial migration bootstraps the release from the exact source commit while that repository is public. Once the release exists, the bootstrap is skipped.
-
-App changes require a new compiled release and an updated `app-release.json`. From the authenticated app checkout, run `scripts/publish-public-app.sh` in this repository after building. No app-source read token is needed for routine project updates.
-
-## Migration
-
-See [migration record](docs/repository-migration.md). The app repository has not been detached or made private. Original shared URLs depend on the old Pages site until a hosting decision is made. New project links use this repository and its Pages site.
-
-GeoLibre and its documentation are MIT licensed. See LICENSE. External data licenses remain recorded per source.
+The old /geolibre-projects/ website URL redirects to /GeoLibre/. No app bundles or website implementation are maintained here. External data licenses are recorded per source.

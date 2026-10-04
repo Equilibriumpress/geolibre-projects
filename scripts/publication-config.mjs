@@ -1,11 +1,8 @@
-import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 export const repositoryUrl = process.env.GEOLIBRE_REPOSITORY_URL || "https://github.com/Equilibriumpress/geolibre-projects";
-export const pagesBase = (process.env.GEOLIBRE_PAGES_URL || "https://equilibriumpress.github.io/geolibre-projects/").replace(/\/?$/, "/");
+export const pagesBase = (process.env.GEOLIBRE_PAGES_URL || "https://equilibriumpress.github.io/GeoLibre/").replace(/\/?$/, "/");
 const candidate = process.env.GITHUB_SHA || execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 if (!/^[a-f0-9]{40}$/.test(candidate)) throw new Error("Publication revision must be a full commit SHA");
 export const revision = candidate;
-export const appRevision = process.env.GEOLIBRE_APP_REVISION || JSON.parse(readFileSync(new URL("../app-release.json", import.meta.url), "utf8")).revision;
-if (!/^[a-f0-9]{40}$/.test(appRevision)) throw new Error("App revision must be a full commit SHA");
 export const appUrl = new URL("demo/", pagesBase).href;
 export const rawProjectBase = `${repositoryUrl.replace("https://github.com/", "https://raw.githubusercontent.com/")}/${revision}/projects`;
