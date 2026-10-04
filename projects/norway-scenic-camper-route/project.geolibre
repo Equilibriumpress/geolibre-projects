@@ -1,0 +1,414 @@
+{
+  "version": "0.1.0",
+  "name": "Norway Scenic Camper Route · Geiranger–Trollstigen",
+  "mapView": {
+    "center": [
+      7.37,
+      62.28
+    ],
+    "zoom": 8,
+    "bearing": -10,
+    "pitch": 55
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/liberty",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "primaryRenderer": "cesium",
+  "layers": [
+    {
+      "id": "norway-camper-route",
+      "name": "Geiranger–Trollstigen scenic route",
+      "type": "geojson",
+      "source": {
+        "type": "geojson"
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#f97316",
+        "strokeColor": "#f97316",
+        "strokeWidth": 5,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.15,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "publisher": "Norwegian Scenic Routes / project-authored simplified geometry",
+        "sourceKind": "embedded-geojson",
+        "routeRole": "video-route-follow",
+        "officialLengthKm": 104,
+        "note": "Simplified line through official route endpoints and viewpoints; use the official GPX for navigation."
+      },
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Norwegian Scenic Route Geiranger–Trollstigen",
+              "route": "63",
+              "length_km": 104,
+              "geometry_note": "Simplified authoring line through official route endpoints and viewpoints. The official GPX remains the authoritative navigation track."
+            },
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  7.393992,
+                  62.014219
+                ],
+                [
+                  7.34,
+                  62.03
+                ],
+                [
+                  7.285,
+                  62.052
+                ],
+                [
+                  7.245,
+                  62.073
+                ],
+                [
+                  7.223597,
+                  62.089302
+                ],
+                [
+                  7.2059,
+                  62.1006
+                ],
+                [
+                  7.187,
+                  62.112
+                ],
+                [
+                  7.16721732,
+                  62.12626334
+                ],
+                [
+                  7.18,
+                  62.153
+                ],
+                [
+                  7.205,
+                  62.185
+                ],
+                [
+                  7.198,
+                  62.22
+                ],
+                [
+                  7.1718,
+                  62.26246
+                ],
+                [
+                  7.187762,
+                  62.284513
+                ],
+                [
+                  7.236,
+                  62.3
+                ],
+                [
+                  7.2833,
+                  62.3167
+                ],
+                [
+                  7.345,
+                  62.326
+                ],
+                [
+                  7.41,
+                  62.33
+                ],
+                [
+                  7.471132,
+                  62.330758
+                ],
+                [
+                  7.515,
+                  62.349
+                ],
+                [
+                  7.55,
+                  62.374
+                ],
+                [
+                  7.585,
+                  62.398
+                ],
+                [
+                  7.62,
+                  62.425
+                ],
+                [
+                  7.663136,
+                  62.453301
+                ],
+                [
+                  7.685,
+                  62.475
+                ],
+                [
+                  7.71,
+                  62.505
+                ],
+                [
+                  7.736939,
+                  62.53207
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    },
+    {
+      "id": "scenic-stops",
+      "name": "Scenic viewpoints",
+      "type": "geojson",
+      "source": {
+        "type": "geojson"
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#ffffff",
+        "strokeColor": "#0f172a",
+        "strokeWidth": 2,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.95,
+        "circleRadius": 8,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "publisher": "Norwegian Scenic Routes",
+        "sourceKind": "embedded-geojson"
+      },
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "id": "flydalsjuvet",
+              "name": "Flydalsjuvet",
+              "kind": "viewpoint"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                7.223597,
+                62.089302
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "id": "ornesvingen",
+              "name": "Ørnesvingen",
+              "kind": "viewpoint"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                7.16721732,
+                62.12626334
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "id": "gudbrandsjuvet",
+              "name": "Gudbrandsjuvet",
+              "kind": "viewpoint"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                7.471132,
+                62.330758
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "id": "trollstigen",
+              "name": "Trollstigen",
+              "kind": "viewpoint"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                7.663136,
+                62.453301
+              ]
+            }
+          }
+        ]
+      },
+      "popup": {
+        "click": true,
+        "hover": true,
+        "titleField": "name",
+        "showFeatureId": false,
+        "fields": [
+          {
+            "field": "kind",
+            "label": "Type"
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    }
+  ],
+  "styles": {},
+  "storymap": {
+    "title": "Geiranger–Trollstigen by camper",
+    "subtitle": "104 km through fjords, valleys and mountain roads",
+    "byline": "GeoLibre route story",
+    "footer": "Route facts: Norwegian Scenic Routes. Photos: Wikimedia Commons; see sources.json.",
+    "theme": "dark",
+    "showMarkers": true,
+    "markerColor": "#f97316",
+    "inset": false,
+    "insetPosition": "bottom-right",
+    "hideChapterNav": false,
+    "startSlide": "adjacent",
+    "endSlide": "adjacent",
+    "chapters": [
+      {
+        "id": "flydalsjuvet",
+        "title": "Flydalsjuvet",
+        "description": "The first dramatic look back over Geirangerfjord before descending into Geiranger.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Geirangerfjord_1.jpg",
+        "alignment": "left",
+        "hidden": false,
+        "location": {
+          "center": [
+            7.223597,
+            62.089302
+          ],
+          "zoom": 13.8,
+          "pitch": 68,
+          "bearing": -28
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "ornesvingen",
+        "title": "Ørnesvingen",
+        "description": "Eleven hairpins climb above Geiranger to a viewpoint over the fjord and the Seven Sisters.",
+        "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%C3%98rnesvingen.JPG",
+        "alignment": "right",
+        "hidden": false,
+        "location": {
+          "center": [
+            7.16721732,
+            62.12626334
+          ],
+          "zoom": 14.1,
+          "pitch": 72,
+          "bearing": 20
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "gudbrandsjuvet",
+        "title": "Gudbrandsjuvet",
+        "description": "The Valldøla river cuts through a narrow gorge in Valldalen.",
+        "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gudbrandsjuvet.jpg",
+        "alignment": "left",
+        "hidden": false,
+        "location": {
+          "center": [
+            7.471132,
+            62.330758
+          ],
+          "zoom": 14.2,
+          "pitch": 67,
+          "bearing": 35
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "trollstigen",
+        "title": "Trollstigen",
+        "description": "The route finishes with one of Norway’s best-known mountain-road viewpoints.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/Trollstigen.jpg",
+        "alignment": "right",
+        "hidden": false,
+        "location": {
+          "center": [
+            7.663136,
+            62.453301
+          ],
+          "zoom": 14,
+          "pitch": 74,
+          "bearing": -35
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [],
+        "onChapterExit": []
+      }
+    ]
+  },
+  "interaction": {
+    "identify": [
+      "scenic-stops"
+    ],
+    "controls": {
+      "search": false,
+      "scale": true,
+      "attribution": true,
+      "globe": true,
+      "terrain": true
+    }
+  },
+  "metadata": {
+    "repositoryProject": true,
+    "projectId": "norway-scenic-camper-route",
+    "provenance": "sources.json",
+    "purpose": "Standalone social route video and interactive route story",
+    "routeSource": "Norwegian Scenic Route Geiranger–Trollstigen"
+  }
+}
