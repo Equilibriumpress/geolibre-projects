@@ -1,11 +1,10 @@
--- Narrative route-video project.
--- No statistical transformation is required.
--- The video follows the embedded GeoJSON route layer and Story Map chapters.
---
--- Authoritative route facts:
--- Norwegian Scenic Route Geiranger–Trollstigen · 104 km.
--- The embedded LineString is intentionally simplified for camera authoring.
+-- Official route facts and locally reproduced GPX length.
+-- Geometry: official trkpt[0:2591] + trkpt[3814:], removing the duplicate return loop.
+-- Original GPX is preserved in official-route.gpx. Retained coordinates are unchanged.
+-- Camera sections use cumulative great-circle distance fractions.
 SELECT
   'Geiranger–Trollstigen' AS route_name,
   104 AS official_length_km,
+  105.556 AS gpx_length_km,
+  3608 AS track_coordinates,
   4 AS featured_viewpoints;

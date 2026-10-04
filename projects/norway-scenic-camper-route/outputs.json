@@ -9,7 +9,7 @@
       "output": "video",
       "path": "video-story.json",
       "primary": true,
-      "description": "Open the 48.5-second vertical globe → route-follow → photo-stop story and export MP4 or WebM.",
+      "description": "Open the 55-second route story with interleaved photos. Preview and export MP4 or WebM in the browser.",
       "availability": "runtime",
       "requires": [
         "project",
@@ -20,7 +20,7 @@
     },
     {
       "id": "map",
-      "title": "Interactive 3D route",
+      "title": "Interactive route with terrain",
       "kind": "map",
       "mode": "deep-link",
       "output": "map",

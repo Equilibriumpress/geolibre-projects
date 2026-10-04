@@ -139,3 +139,7 @@ VIDEO_REQUEST.md
 
 ChatGPT should author and revise these project files rather than adding
 route-specific application code.
+
+## Continuous route sections and photos
+
+Use optional `routeFollow.startFraction` and `routeFollow.endFraction` (0–1 cumulative route distance) to place photo stops between forward route sections. Fractions require `0 <= startFraction < endFraction <= 1`. The compiler creates continuous camera segments evaluated on the shared playback clock, without repeatedly restarting flyTo easing. Preview seek and paused photo stops retain visible images. Preview and recording both preload images and report failures. Store licensed resized images alongside project files for reliable publication.
