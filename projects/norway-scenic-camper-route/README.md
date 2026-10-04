@@ -25,7 +25,7 @@ The same project also opens as an interactive 3D map and a Story Map.
 
 ## Media
 
-Story Map images come from Wikimedia Commons. Author, file page and licence are recorded in `sources.json`. Video export preloads each image before recording so a blocked image fails explicitly instead of corrupting the canvas.
+Story Map images come from Wikimedia Commons. Author, file page and licence are recorded in `sources.json`. Runtime image URLs use direct `upload.wikimedia.org` files instead of Commons redirect URLs so Safari can preload them with canvas/CORS access before recording.
 
 ## Travel use
 
