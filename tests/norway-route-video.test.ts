@@ -34,7 +34,7 @@ describe("Norway scenic camper route project", () => {
     assert.equal(story.fps, 30);
     assert.equal(
       story.scenes.reduce((sum: number, scene: { durationMs: number }) => sum + scene.durationMs, 0),
-      55_000,
+      41_500,
     );
 
     const routeScene = story.scenes.find((scene: { routeLayerId?: string }) => scene.routeLayerId);
