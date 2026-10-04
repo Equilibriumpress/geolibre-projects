@@ -1,0 +1,14 @@
+{
+  "defaultScenario": "ageing-density",
+  "scenarios": [
+    {
+      "id": "ageing-density",
+      "title": "Ageing + density",
+      "description": "Equal-weight percentile score for population density and share aged 65+.",
+      "weights": {
+        "population-density": 0.5,
+        "older-share": 0.5
+      }
+    }
+  ]
+}

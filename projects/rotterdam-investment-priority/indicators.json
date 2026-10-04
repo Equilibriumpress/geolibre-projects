@@ -1,0 +1,136 @@
+{
+  "analysisUnit": "CBS 500 x 500 metre statistical grid",
+  "analysisYear": 2024,
+  "indicators": [
+    {
+      "id": "population-pressure",
+      "title": "Population pressure",
+      "description": "Residents per 500 m grid cell.",
+      "field": "aantal_inwoners",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "residents"
+    },
+    {
+      "id": "older-share",
+      "title": "Residents aged 65+",
+      "description": "Residents aged 65+ as a share of all residents.",
+      "numeratorField": "aantal_inwoners_65_jaar_en_ouder",
+      "denominatorField": "aantal_inwoners",
+      "multiplier": 100,
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "%"
+    },
+    {
+      "id": "child-share",
+      "title": "Residents aged 0-14",
+      "description": "Residents aged 0-14 as a share of all residents.",
+      "numeratorField": "aantal_inwoners_0_tot_15_jaar",
+      "denominatorField": "aantal_inwoners",
+      "multiplier": 100,
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "%"
+    },
+    {
+      "id": "low-income",
+      "title": "Low-income households",
+      "description": "CBS percentage of households in the low-income category.",
+      "field": "percentage_laag_inkomen_huishouden",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "maxValid": 100,
+      "quality": 1,
+      "year": 2024,
+      "unit": "%"
+    },
+    {
+      "id": "benefit-share",
+      "title": "Residents receiving benefits",
+      "description": "Persons receiving benefits below state-pension age divided by total residents.",
+      "numeratorField": "aantal_personen_met_uitkering_onder_aowlft",
+      "denominatorField": "aantal_inwoners",
+      "multiplier": 100,
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "%"
+    },
+    {
+      "id": "single-parent-share",
+      "title": "Single-parent households",
+      "description": "Single-parent households as a share of private households.",
+      "numeratorField": "aantal_eenouderhuishoudens",
+      "denominatorField": "aantal_part_huishoudens",
+      "multiplier": 100,
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "%"
+    },
+    {
+      "id": "household-income",
+      "title": "Average household income",
+      "description": "Average household income. Lower values receive a higher priority score.",
+      "field": "gemiddeld_inkomen_huishouden",
+      "direction": "lower-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "CBS income unit"
+    },
+    {
+      "id": "gp-distance",
+      "title": "Distance to GP practice",
+      "description": "Distance to the nearest general-practitioner practice.",
+      "field": "dichtstbijzijnde_huisartsenpraktijk_afstand_in_km",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "km"
+    },
+    {
+      "id": "primary-school-distance",
+      "title": "Distance to primary school",
+      "description": "Distance to the nearest primary school.",
+      "field": "dichtstbijzijnde_basisonderwijs_afstand_in_km",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "km"
+    },
+    {
+      "id": "supermarket-distance",
+      "title": "Distance to large supermarket",
+      "description": "Distance to the nearest large supermarket.",
+      "field": "dichtstbijzijnde_grote_supermarkt_afstand_in_km",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "km"
+    },
+    {
+      "id": "train-distance",
+      "title": "Distance to train station",
+      "description": "Distance to the nearest train station.",
+      "field": "dichtstbijzijnde_treinstation_afstand_in_km",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2024,
+      "unit": "km"
+    }
+  ]
+}

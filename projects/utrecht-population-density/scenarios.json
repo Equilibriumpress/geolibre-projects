@@ -1,0 +1,13 @@
+{
+  "scenarios": [
+    {
+      "id": "density",
+      "title": "Population density",
+      "description": "One indicator, full weight. Higher values mean higher density, not worse conditions.",
+      "weights": {
+        "population-density": 1
+      }
+    }
+  ],
+  "defaultScenario": "density"
+}

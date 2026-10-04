@@ -1,0 +1,9 @@
+node_modules/
+site/
+docs/project-data/
+docs/publication.json
+app-source/
+app-bundle/
+*.tar.gz
+
+.cache/

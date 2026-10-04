@@ -1,0 +1,114 @@
+{
+  "featured": "map",
+  "outputs": [
+    {
+      "id": "map",
+      "title": "Interactive map",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "description": "Open the Utrecht ageing and density analysis.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "globe-3d-flyover",
+      "title": "Globe \u2192 Utrecht \u2192 3D \u2192 Overvecht",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "project": "flyover.geolibre",
+      "path": "globe-utrecht-3d-story.json",
+      "primary": false,
+      "description": "Open the six-step Cesium showcase directly: Globe \u2192 Nederland \u2192 Utrecht \u2192 3D buildings \u2192 Overvecht \u2192 data layer.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "video",
+      "title": "Analysis flyover \u00b7 9:16",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "path": "video-story.json",
+      "description": "Open the 30-second vertical ageing + density analysis in the Visual Story / Flyover player.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "kind": "dashboard",
+      "mode": "deep-link",
+      "output": "dashboard",
+      "description": "Compare source distributions and the combined index.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "print",
+      "title": "PNG / PDF",
+      "kind": "print",
+      "mode": "deep-link",
+      "output": "print",
+      "description": "Open the configured print layout.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "data",
+      "title": "Data exports",
+      "kind": "data",
+      "mode": "deep-link",
+      "output": "data",
+      "formats": [
+        "geojson",
+        "csv",
+        "geoparquet",
+        "geopackage"
+      ],
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "analysis",
+      "title": "Analysis & SQL",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    }
+  ]
+}

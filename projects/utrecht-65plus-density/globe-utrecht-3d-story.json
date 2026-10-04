@@ -1,0 +1,203 @@
+{
+  "version": "0.1.0",
+  "title": "From globe to Overvecht",
+  "preset": "standard",
+  "aspectRatio": "16:9",
+  "fps": 30,
+  "output": {
+    "bitrateMbps": 20,
+    "includeBranding": true
+  },
+  "scenes": [
+    {
+      "id": "globe",
+      "type": "title",
+      "durationMs": 3500,
+      "headline": "Globe",
+      "subhead": "Start with the whole Earth",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.2913,
+          52.1326
+        ],
+        "zoom": 1.7,
+        "pitch": 8,
+        "bearing": 0,
+        "transitionMs": 2600
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 1200,
+          "text": "A spatial story can start at planetary scale.",
+          "position": "bottom"
+        }
+      ]
+    },
+    {
+      "id": "netherlands",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "Nederland",
+      "subhead": "Move from global context to national scale",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.2913,
+          52.1326
+        ],
+        "zoom": 6.2,
+        "pitch": 24,
+        "bearing": -8,
+        "transitionMs": 3300
+      }
+    },
+    {
+      "id": "utrecht",
+      "type": "map",
+      "durationMs": 5000,
+      "headline": "Utrecht",
+      "subhead": "The camera continues into the city",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 11.5,
+        "pitch": 48,
+        "bearing": -14,
+        "transitionMs": 3700
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 2700,
+          "text": "Utrecht · city scale",
+          "position": "bottom"
+        }
+      ]
+    },
+    {
+      "id": "buildings",
+      "type": "map",
+      "durationMs": 5500,
+      "headline": "3D buildings",
+      "subhead": "Open 3DBAG LoD 2.2 streams into the Cesium scene",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 13.3,
+        "pitch": 66,
+        "bearing": 24,
+        "transitionMs": 3500
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "cbs-utrecht-buurten-2025",
+          "visible": false
+        },
+        {
+          "kind": "layer",
+          "atMs": 600,
+          "layerId": "3dbag-netherlands-lod22",
+          "visible": true,
+          "opacity": 1
+        },
+        {
+          "kind": "annotation",
+          "atMs": 2100,
+          "text": "3DBAG LoD 2.2 · open 3D building data",
+          "position": "bottom",
+          "source": "© 3DBAG by tudelft3d and 3DGI"
+        }
+      ]
+    },
+    {
+      "id": "overvecht",
+      "type": "map",
+      "durationMs": 6000,
+      "headline": "Overvecht",
+      "subhead": "Fly lower into the northern Utrecht district",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.10964,
+          52.12054
+        ],
+        "zoom": 15.1,
+        "pitch": 73,
+        "bearing": 32,
+        "transitionMs": 4100
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "3dbag-netherlands-lod22",
+          "visible": true,
+          "opacity": 1
+        },
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "cbs-utrecht-buurten-2025",
+          "visible": false
+        },
+        {
+          "kind": "annotation",
+          "atMs": 3300,
+          "text": "Overvecht",
+          "position": "center",
+          "source": "OpenStreetMap / Wikidata location context"
+        }
+      ]
+    },
+    {
+      "id": "data-layer",
+      "type": "conclusion",
+      "durationMs": 5500,
+      "headline": "Data layer",
+      "subhead": "Finish by replacing the buildings with Utrecht neighbourhood data",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.10964,
+          52.12054
+        ],
+        "zoom": 14.3,
+        "pitch": 58,
+        "bearing": 12,
+        "transitionMs": 3000
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "3dbag-netherlands-lod22",
+          "visible": false
+        },
+        {
+          "kind": "layer",
+          "atMs": 700,
+          "layerId": "cbs-utrecht-buurten-2025",
+          "visible": true,
+          "opacity": 0.82
+        },
+        {
+          "kind": "annotation",
+          "atMs": 1900,
+          "text": "CBS neighbourhoods · population density + share aged 65+",
+          "position": "bottom",
+          "source": "CBS Wijken en Buurten 2025 via PDOK"
+        }
+      ]
+    }
+  ]
+}

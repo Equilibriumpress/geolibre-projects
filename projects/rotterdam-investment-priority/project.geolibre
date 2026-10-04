@@ -1,0 +1,742 @@
+{
+  "version": "0.1.0",
+  "name": "Rotterdam Investment Priority Lab",
+  "mapView": {
+    "center": [
+      4.49,
+      51.925
+    ],
+    "zoom": 11,
+    "bearing": 0,
+    "pitch": 0
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/positron",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "layers": [
+    {
+      "id": "cbs-grid-rotterdam-2024",
+      "name": "CBS 500m grid 2024 - Rotterdam urban core",
+      "type": "geojson",
+      "source": {
+        "type": "geojson",
+        "url": "https://api.pdok.nl/cbs/vierkantstatistieken500m/ogc/v1/collections/vierkant500/items?f=json&bbox=4.40,51.87,4.60,51.99&limit=1000&filter=jaarcode%20%3D%202024&filter-lang=cql2-text"
+      },
+      "sourcePath": "https://api.pdok.nl/cbs/vierkantstatistieken500m/ogc/v1/collections/vierkant500/items?f=json&bbox=4.40,51.87,4.60,51.99&limit=1000&filter=jaarcode%20%3D%202024&filter-lang=cql2-text",
+      "visible": false,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#64748b",
+        "strokeColor": "#475569",
+        "strokeWidth": 0.5,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.15,
+        "circleRadius": 5,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": true,
+        "nativeLayerIds": [],
+        "sourceIds": [],
+        "panelCollapsed": true,
+        "vectorSource": "url",
+        "vectorState": {
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": false,
+          "renderMode": "geojson",
+          "style": {
+            "fillColor": "#64748b",
+            "fillOpacity": 0.15,
+            "lineColor": "#475569",
+            "lineWidth": 0.5
+          }
+        },
+        "publisher": "CBS via PDOK",
+        "year": 2024,
+        "license": "CC BY 4.0",
+        "bounds": [
+          4.4,
+          51.87,
+          4.6,
+          51.99
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    }
+  ],
+  "styles": {},
+  "plugins": {
+    "manifestUrls": [],
+    "activePluginIds": [
+      "maplibre-layer-control",
+      "investment-priority-lab"
+    ],
+    "mapControlPositions": {
+      "maplibre-layer-control": "top-right"
+    },
+    "settings": {
+      "investment-priority-lab": {
+        "sourceLayerId": "cbs-grid-rotterdam-2024",
+        "resultLayerName": "Investment priority - Rotterdam",
+        "analysisUnit": "CBS 500 x 500 metre statistical grid",
+        "analysisYear": 2024,
+        "indicators": [
+          {
+            "id": "population-pressure",
+            "title": "Population pressure",
+            "description": "Residents per 500 m grid cell.",
+            "field": "aantal_inwoners",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "residents"
+          },
+          {
+            "id": "older-share",
+            "title": "Residents aged 65+",
+            "description": "Residents aged 65+ as a share of all residents.",
+            "numeratorField": "aantal_inwoners_65_jaar_en_ouder",
+            "denominatorField": "aantal_inwoners",
+            "multiplier": 100,
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "%"
+          },
+          {
+            "id": "child-share",
+            "title": "Residents aged 0-14",
+            "description": "Residents aged 0-14 as a share of all residents.",
+            "numeratorField": "aantal_inwoners_0_tot_15_jaar",
+            "denominatorField": "aantal_inwoners",
+            "multiplier": 100,
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "%"
+          },
+          {
+            "id": "low-income",
+            "title": "Low-income households",
+            "description": "CBS percentage of households in the low-income category.",
+            "field": "percentage_laag_inkomen_huishouden",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "maxValid": 100,
+            "quality": 1,
+            "year": 2024,
+            "unit": "%"
+          },
+          {
+            "id": "benefit-share",
+            "title": "Residents receiving benefits",
+            "description": "Persons receiving benefits below state-pension age divided by total residents.",
+            "numeratorField": "aantal_personen_met_uitkering_onder_aowlft",
+            "denominatorField": "aantal_inwoners",
+            "multiplier": 100,
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "%"
+          },
+          {
+            "id": "single-parent-share",
+            "title": "Single-parent households",
+            "description": "Single-parent households as a share of private households.",
+            "numeratorField": "aantal_eenouderhuishoudens",
+            "denominatorField": "aantal_part_huishoudens",
+            "multiplier": 100,
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "%"
+          },
+          {
+            "id": "household-income",
+            "title": "Average household income",
+            "description": "Average household income. Lower values receive a higher priority score.",
+            "field": "gemiddeld_inkomen_huishouden",
+            "direction": "lower-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "CBS income unit"
+          },
+          {
+            "id": "gp-distance",
+            "title": "Distance to GP practice",
+            "description": "Distance to the nearest general-practitioner practice.",
+            "field": "dichtstbijzijnde_huisartsenpraktijk_afstand_in_km",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "km"
+          },
+          {
+            "id": "primary-school-distance",
+            "title": "Distance to primary school",
+            "description": "Distance to the nearest primary school.",
+            "field": "dichtstbijzijnde_basisonderwijs_afstand_in_km",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "km"
+          },
+          {
+            "id": "supermarket-distance",
+            "title": "Distance to large supermarket",
+            "description": "Distance to the nearest large supermarket.",
+            "field": "dichtstbijzijnde_grote_supermarkt_afstand_in_km",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "km"
+          },
+          {
+            "id": "train-distance",
+            "title": "Distance to train station",
+            "description": "Distance to the nearest train station.",
+            "field": "dichtstbijzijnde_treinstation_afstand_in_km",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2024,
+            "unit": "km"
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "balanced-investment",
+            "title": "Balanced investment",
+            "description": "Balances population pressure, ageing, income, social security and access to daily services.",
+            "weights": {
+              "population-pressure": 0.2,
+              "older-share": 0.15,
+              "low-income": 0.2,
+              "benefit-share": 0.15,
+              "gp-distance": 0.1,
+              "supermarket-distance": 0.1,
+              "primary-school-distance": 0.1
+            }
+          },
+          {
+            "id": "healthy-ageing",
+            "title": "Healthy ageing",
+            "description": "Prioritises older residents, access to primary care and daily necessities, and socioeconomic vulnerability.",
+            "weights": {
+              "older-share": 0.35,
+              "gp-distance": 0.25,
+              "low-income": 0.15,
+              "benefit-share": 0.15,
+              "supermarket-distance": 0.1
+            }
+          },
+          {
+            "id": "family-access",
+            "title": "Family access",
+            "description": "Prioritises children, school access, single-parent households, low income and access to daily groceries.",
+            "weights": {
+              "child-share": 0.3,
+              "primary-school-distance": 0.25,
+              "low-income": 0.2,
+              "single-parent-share": 0.15,
+              "supermarket-distance": 0.1
+            }
+          },
+          {
+            "id": "social-vulnerability",
+            "title": "Social vulnerability",
+            "description": "Emphasises low income, benefit dependency, single-parent households and low average household income.",
+            "weights": {
+              "low-income": 0.3,
+              "benefit-share": 0.25,
+              "single-parent-share": 0.2,
+              "household-income": 0.15,
+              "gp-distance": 0.1
+            }
+          },
+          {
+            "id": "service-pressure",
+            "title": "Service pressure",
+            "description": "Emphasises population pressure and distance to health, food, school and rail services.",
+            "weights": {
+              "population-pressure": 0.3,
+              "gp-distance": 0.2,
+              "supermarket-distance": 0.2,
+              "primary-school-distance": 0.15,
+              "train-distance": 0.15
+            }
+          }
+        ],
+        "activeScenarioId": "balanced-investment",
+        "viewMode": "scenario",
+        "panelOpen": true,
+        "deferredLayerIds": [
+          "investment-priority-lab-results"
+        ]
+      }
+    }
+  },
+  "interaction": {
+    "identify": "all",
+    "controls": {
+      "search": true,
+      "scale": true,
+      "attribution": true
+    }
+  },
+  "metadata": {
+    "repositoryProject": true,
+    "projectId": "rotterdam-investment-priority",
+    "analysis": "analysis.sql",
+    "provenance": "sources.json",
+    "indicators": "indicators.json",
+    "scenarios": "scenarios.json",
+    "note": "Scores are relative prioritisation indicators, not causal risk estimates."
+  },
+  "selectedLayerId": "investment-priority-lab-results",
+  "widgets": [
+    {
+      "id": "kpi-count",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "indicatorAggregation": "count",
+      "title": "Grid cells"
+    },
+    {
+      "id": "kpi-mean-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "field": "priority_score",
+      "indicatorAggregation": "mean",
+      "title": "Mean priority",
+      "suffix": " / 100"
+    },
+    {
+      "id": "kpi-median-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "field": "priority_score",
+      "indicatorAggregation": "median",
+      "title": "Median priority",
+      "suffix": " / 100"
+    },
+    {
+      "id": "kpi-sum-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "field": "priority_score",
+      "indicatorAggregation": "sum",
+      "title": "Sum priority scores"
+    },
+    {
+      "id": "kpi-min-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "field": "priority_score",
+      "indicatorAggregation": "min",
+      "title": "Minimum priority",
+      "suffix": " / 100"
+    },
+    {
+      "id": "kpi-max-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "indicator",
+      "field": "priority_score",
+      "indicatorAggregation": "max",
+      "title": "Maximum priority",
+      "suffix": " / 100"
+    },
+    {
+      "id": "hist-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "histogram",
+      "field": "priority_score",
+      "bins": 10,
+      "title": "Priority score distribution"
+    },
+    {
+      "id": "scatter-confidence",
+      "layerId": "investment-priority-lab-results",
+      "type": "scatter",
+      "xField": "priority_score",
+      "yField": "confidence_score",
+      "title": "Priority vs confidence"
+    },
+    {
+      "id": "bar-consensus",
+      "layerId": "investment-priority-lab-results",
+      "type": "bar",
+      "category": "top10_scenarios",
+      "aggregation": "count",
+      "title": "Top-decile appearances"
+    },
+    {
+      "id": "box-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "box",
+      "field": "priority_score",
+      "title": "Priority spread"
+    },
+    {
+      "id": "line-priority",
+      "layerId": "investment-priority-lab-results",
+      "type": "line",
+      "field": "priority_score",
+      "title": "Priority sequence"
+    },
+    {
+      "id": "pie-consensus",
+      "layerId": "investment-priority-lab-results",
+      "type": "pie",
+      "category": "top10_scenarios",
+      "aggregation": "count",
+      "title": "Consensus frequency"
+    },
+    {
+      "id": "selector-consensus",
+      "layerId": "investment-priority-lab-results",
+      "type": "selector",
+      "category": "top10_scenarios",
+      "multiple": true,
+      "title": "Filter widgets by consensus"
+    },
+    {
+      "id": "top-priority-list",
+      "layerId": "investment-priority-lab-results",
+      "type": "list",
+      "listFields": [
+        "crs28992res500m",
+        "priority_score",
+        "confidence_score",
+        "consensus_score",
+        "top10_scenarios"
+      ],
+      "sortBy": "priority_score",
+      "sortDir": "desc",
+      "limit": 15,
+      "title": "Highest-priority cells"
+    }
+  ],
+  "dashboardColumns": 3,
+  "legend": {
+    "title": "Investment priority",
+    "groupByLayer": true,
+    "order": [
+      "investment-priority-lab-results"
+    ],
+    "overrides": {},
+    "panelVisible": true,
+    "panelCollapsed": false,
+    "panelPosition": "top-left",
+    "customEntries": {
+      "investment-priority-lab-results": {
+        "title": "Priority score",
+        "items": [
+          {
+            "label": "0 · low",
+            "color": "#2166ac",
+            "shape": "square"
+          },
+          {
+            "label": "20",
+            "color": "#67a9cf",
+            "shape": "square"
+          },
+          {
+            "label": "40",
+            "color": "#d1e5f0",
+            "shape": "square"
+          },
+          {
+            "label": "60",
+            "color": "#fddbc7",
+            "shape": "square"
+          },
+          {
+            "label": "80",
+            "color": "#ef8a62",
+            "shape": "square"
+          },
+          {
+            "label": "100 · high",
+            "color": "#b2182b",
+            "shape": "square"
+          },
+          {
+            "label": "Missing score",
+            "color": "#8a8a8a",
+            "shape": "square"
+          }
+        ]
+      }
+    }
+  },
+  "storymap": {
+    "title": "Rotterdam Investment Priorities",
+    "subtitle": "How priorities shift across the urban core",
+    "byline": "GeoLibre Output Benchmark",
+    "footer": "Source: CBS Vierkantstatistieken 500m 2024 via PDOK. Scores are relative prioritisation indicators.",
+    "theme": "light",
+    "showMarkers": true,
+    "markerColor": "#334155",
+    "inset": true,
+    "insetPosition": "bottom-right",
+    "hideChapterNav": false,
+    "startSlide": "adjacent",
+    "endSlide": "adjacent",
+    "chapters": [
+      {
+        "id": "overview",
+        "title": "A city-scale prioritisation model",
+        "description": "The Investment Priority Lab combines demographic, socioeconomic and service-access indicators on the official CBS 500 × 500 metre grid. This first view shows the full Rotterdam urban-core study area.",
+        "alignment": "left",
+        "hidden": false,
+        "location": {
+          "center": [
+            4.49,
+            51.925
+          ],
+          "zoom": 10.7,
+          "pitch": 0,
+          "bearing": 0
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [
+          {
+            "id": "overview-result",
+            "layerId": "investment-priority-lab-results",
+            "opacity": 0.78,
+            "duration": 800
+          }
+        ],
+        "onChapterExit": []
+      },
+      {
+        "id": "centre",
+        "title": "Central Rotterdam",
+        "description": "Dense central cells allow the dashboard and map to be compared at a finer scale. Select a cell in the result layer to inspect its priority, confidence and main drivers.",
+        "alignment": "right",
+        "hidden": false,
+        "location": {
+          "center": [
+            4.4795,
+            51.9225
+          ],
+          "zoom": 13.1,
+          "pitch": 35,
+          "bearing": -12
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [
+          {
+            "id": "centre-result",
+            "layerId": "investment-priority-lab-results",
+            "opacity": 0.86,
+            "duration": 600
+          }
+        ],
+        "onChapterExit": []
+      },
+      {
+        "id": "south",
+        "title": "Rotterdam South",
+        "description": "This chapter tests a second urban context with the same transparent scoring model. The score is relative to all loaded grid cells and should always be read together with confidence.",
+        "alignment": "left",
+        "hidden": false,
+        "location": {
+          "center": [
+            4.496,
+            51.889
+          ],
+          "zoom": 12.4,
+          "pitch": 40,
+          "bearing": 15
+        },
+        "mapAnimation": "easeTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [
+          {
+            "id": "south-result",
+            "layerId": "investment-priority-lab-results",
+            "opacity": 0.9,
+            "duration": 600
+          }
+        ],
+        "onChapterExit": []
+      },
+      {
+        "id": "west",
+        "title": "West and port-side neighbourhoods",
+        "description": "The model can be reweighted in the Investment Priority Lab. Healthy ageing, family access, social vulnerability and service pressure are alternative policy lenses over the same source data.",
+        "alignment": "right",
+        "hidden": false,
+        "location": {
+          "center": [
+            4.43,
+            51.919
+          ],
+          "zoom": 12,
+          "pitch": 30,
+          "bearing": -25
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": false,
+        "onChapterEnter": [
+          {
+            "id": "west-result",
+            "layerId": "investment-priority-lab-results",
+            "opacity": 0.82,
+            "duration": 600
+          }
+        ],
+        "onChapterExit": []
+      },
+      {
+        "id": "consensus",
+        "title": "Consensus across policy choices",
+        "description": "Consensus identifies cells that stay high-priority across several scenarios. Use the Scenario Lab's consensus view to compare this narrative with the live multi-scenario result.",
+        "alignment": "center",
+        "hidden": false,
+        "location": {
+          "center": [
+            4.49,
+            51.918
+          ],
+          "zoom": 11.3,
+          "pitch": 20,
+          "bearing": 0
+        },
+        "mapAnimation": "flyTo",
+        "rotateAnimation": true,
+        "onChapterEnter": [
+          {
+            "id": "consensus-result",
+            "layerId": "investment-priority-lab-results",
+            "opacity": 0.88,
+            "duration": 900
+          }
+        ],
+        "onChapterExit": []
+      }
+    ]
+  },
+  "printLayout": {
+    "title": "Rotterdam Investment Priority Lab",
+    "subtitle": "CBS 500 × 500 metre grid · Output benchmark",
+    "titlePlacement": "outside",
+    "titleAlign": "left",
+    "paperSize": "a4",
+    "orientation": "landscape",
+    "customWidth": 1280,
+    "customHeight": 720,
+    "customUnit": "px",
+    "pageMargin": "normal",
+    "showPageBorder": true,
+    "pageBorderColor": "#111827",
+    "pageBorderWidth": 1,
+    "mapBorderColor": "#6b7280",
+    "mapBorderWidth": 1,
+    "mapBackground": "#f3f4f6",
+    "showTitle": true,
+    "showSubtitle": true,
+    "showLegend": true,
+    "showScaleBar": true,
+    "showNorthArrow": true,
+    "navigationGrouped": true,
+    "showFooter": true,
+    "footerText": "CBS Vierkantstatistieken 500m 2024 via PDOK · Scores are relative prioritisation indicators.",
+    "showDate": true,
+    "dateText": "",
+    "showAttribution": true,
+    "showColorbar": true,
+    "colorbarRamp": "RdBu",
+    "colorbarMin": "0",
+    "colorbarMax": "100",
+    "colorbarLabel": "Priority score",
+    "colorbarOrientation": "vertical",
+    "colorbarLength": 34,
+    "colorbarPosition": "top-right",
+    "showCustomLegend": false,
+    "customLegendTitle": "Priority",
+    "customLegendEntries": [],
+    "customLegendPosition": "top-left",
+    "showDataTable": true,
+    "tableLayerId": "investment-priority-lab-results",
+    "tableTitle": "Highest-priority grid cells",
+    "tableColumns": [
+      "crs28992res500m",
+      "priority_score",
+      "confidence_score",
+      "consensus_score",
+      "top10_scenarios"
+    ],
+    "tableSortField": "priority_score",
+    "tableSortDesc": true,
+    "tableMaxRows": 10,
+    "tableFitRows": true,
+    "tablePosition": "bottom-left",
+    "tablePageFilter": "intersecting",
+    "tableFilterToAtlasFeature": true,
+    "showDataChart": true,
+    "chartLayerId": "investment-priority-lab-results",
+    "chartTitle": "Consensus frequency",
+    "chartType": "bar",
+    "chartCategoryField": "top10_scenarios",
+    "chartAggregation": "count",
+    "chartValueField": "",
+    "chartPosition": "bottom-right",
+    "chartPageFilter": "intersecting",
+    "showInfoBlock": true,
+    "author": "Equilibriumpress",
+    "projectNumber": "GEOLIBRE-BENCHMARK-01",
+    "crs": "EPSG:4326 display · CBS source grid in RD New",
+    "revision": "1",
+    "captureMode": "extent",
+    "extentBbox": [
+      4.4,
+      51.87,
+      4.6,
+      51.99
+    ],
+    "atlasEnabled": true,
+    "atlasLayerId": "investment-priority-lab-results",
+    "atlasCoverage": "features",
+    "atlasSegmentKm": "20",
+    "atlasNameField": "crs28992res500m",
+    "atlasExtentMode": "margin",
+    "atlasMarginPct": 35,
+    "atlasMaskEnabled": true,
+    "atlasScale": "25000",
+    "atlasSortField": "priority_score",
+    "atlasSortDescending": true,
+    "atlasFilter": "priority_score >= 80",
+    "atlasFilenamePattern": "rotterdam-priority-{atlas.pagenumber}-{atlas.name}"
+  }
+}

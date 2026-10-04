@@ -1,0 +1,36 @@
+{
+  "id": "utrecht-65plus-density",
+  "title": "Ageing and population density in Utrecht",
+  "summary": "Explores Utrecht neighbourhoods that combine a high share of residents aged 65+ with high population density.",
+  "status": "published",
+  "location": "Utrecht, Netherlands",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "ageing",
+    "population",
+    "density",
+    "neighbourhoods"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map",
+    "viewer",
+    "dashboard",
+    "print-layout",
+    "dataset",
+    "video"
+  ],
+  "outputRegistry": "outputs.json",
+  "videoStory": "video-story.json",
+  "question": "Which Utrecht neighbourhoods combine a high share of residents aged 65+ with high population density?",
+  "interpretation": "The index averages the two within-Utrecht percentile ranks with equal weights. A high mean indicates a high combined rank. One high component also raises the mean, so inspect both values in the dashboard.",
+  "limitations": [
+    "This is a descriptive index, not a health-risk or care-demand estimate.",
+    "Live source updates can change ranks. The geographic filter and missing-value rules affect the comparison."
+  ],
+  "analysisYear": 2025
+}

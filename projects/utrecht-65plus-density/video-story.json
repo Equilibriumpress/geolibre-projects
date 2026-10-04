@@ -1,0 +1,221 @@
+{
+  "version": "0.1.0",
+  "title": "Where ageing meets density in Utrecht",
+  "preset": "tiktok",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "output": {
+    "bitrateMbps": 20,
+    "showSafeArea": true,
+    "includeBranding": true
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "type": "title",
+      "durationMs": 2500,
+      "headline": "Where ageing meets density in Utrecht",
+      "subhead": "CBS neighbourhood data · 2025",
+      "transition": "cut",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 9.2,
+        "pitch": 20,
+        "bearing": 0,
+        "transitionMs": 0
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 900,
+          "text": "One city. Two demographic signals.",
+          "position": "bottom",
+          "source": "CBS via PDOK"
+        }
+      ]
+    },
+    {
+      "id": "city-reveal",
+      "type": "map",
+      "durationMs": 4000,
+      "headline": "Two signals become one comparable index",
+      "subhead": "50% population density · 50% residents aged 65+",
+      "scenarioId": "ageing-density",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 11.2,
+        "pitch": 52,
+        "bearing": -12,
+        "transitionMs": 2600
+      },
+      "transition": "fly",
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "investment-priority-lab-results",
+          "visible": true,
+          "opacity": 0.88
+        },
+        {
+          "kind": "annotation",
+          "atMs": 1700,
+          "text": "Each indicator is percentile-ranked within Utrecht.",
+          "position": "bottom",
+          "source": "analysis.sql"
+        }
+      ]
+    },
+    {
+      "id": "high-scores",
+      "type": "highlight",
+      "durationMs": 5000,
+      "headline": "The highest combined scores emerge",
+      "layerId": "investment-priority-lab-results",
+      "field": "priority_score",
+      "threshold": 80,
+      "scenarioId": "ageing-density",
+      "camera": {
+        "center": [
+          5.116,
+          52.112
+        ],
+        "zoom": 13.1,
+        "pitch": 67,
+        "bearing": 22,
+        "transitionMs": 3000
+      },
+      "transition": "fly",
+      "caption": "Score ≥ 80 highlights the strongest combined signal",
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 2200,
+          "text": "High means high relative to other Utrecht neighbourhoods.",
+          "position": "bottom",
+          "source": "CBS Wijken en Buurten 2025"
+        }
+      ]
+    },
+    {
+      "id": "north-flyover",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "Fly through the northern part of the city",
+      "scenarioId": "ageing-density",
+      "camera": {
+        "center": [
+          5.111,
+          52.119
+        ],
+        "zoom": 14,
+        "pitch": 76,
+        "bearing": 58,
+        "transitionMs": 3200
+      },
+      "transition": "fly",
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "investment-priority-lab-results",
+          "visible": true,
+          "opacity": 0.9
+        }
+      ]
+    },
+    {
+      "id": "southwest-flyover",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "Then compare the southwest",
+      "scenarioId": "ageing-density",
+      "camera": {
+        "center": [
+          5.087,
+          52.068
+        ],
+        "zoom": 14,
+        "pitch": 74,
+        "bearing": -38,
+        "transitionMs": 3200
+      },
+      "transition": "fly",
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 1900,
+          "text": "The same scoring rule is used everywhere.",
+          "position": "bottom",
+          "source": "GeoLibre runtime analysis"
+        }
+      ]
+    },
+    {
+      "id": "east-flyover",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "And the eastern neighbourhoods",
+      "scenarioId": "ageing-density",
+      "camera": {
+        "center": [
+          5.151,
+          52.087
+        ],
+        "zoom": 13.8,
+        "pitch": 72,
+        "bearing": 28,
+        "transitionMs": 3100
+      },
+      "transition": "fly",
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "investment-priority-lab-results",
+          "visible": true,
+          "opacity": 0.92
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "type": "conclusion",
+      "durationMs": 5000,
+      "headline": "Density alone is not the story",
+      "subhead": "The combined map shows where density and ageing overlap most strongly.",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 11,
+        "pitch": 55,
+        "bearing": 0,
+        "transitionMs": 2600
+      },
+      "transition": "fly",
+      "caption": "Explore the interactive Utrecht project",
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 1800,
+          "text": "Descriptive prioritisation, not a health-risk score.",
+          "position": "bottom",
+          "source": "CBS 2025 · GeoLibre"
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "music": "optional-light-pulse",
+    "musicVolume": 0.12,
+    "narrationVolume": 1
+  }
+}

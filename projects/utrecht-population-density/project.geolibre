@@ -1,0 +1,263 @@
+{
+  "version": "0.1.0",
+  "name": "Population density in Utrecht",
+  "mapView": {
+    "center": [
+      5.1214,
+      52.0907
+    ],
+    "zoom": 11,
+    "bearing": -8,
+    "pitch": 42
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/positron",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "layers": [
+    {
+      "id": "cbs-utrecht-buurten-2025",
+      "name": "CBS neighbourhoods 2025 - Utrecht",
+      "type": "geojson",
+      "source": {
+        "type": "geojson",
+        "url": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json&bbox=5.00,52.00,5.25,52.17&limit=1000&filter=gemeentecode%20%3D%20%27GM0344%27&filter-lang=cql2-text"
+      },
+      "sourcePath": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json&bbox=5.00,52.00,5.25,52.17&limit=1000&filter=gemeentecode%20%3D%20%27GM0344%27&filter-lang=cql2-text",
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#3b82f6",
+        "strokeColor": "#1e40af",
+        "strokeWidth": 1,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.45,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": true,
+        "nativeLayerIds": [],
+        "sourceIds": [],
+        "panelCollapsed": true,
+        "vectorSource": "url",
+        "vectorState": {
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": false,
+          "renderMode": "geojson",
+          "style": {
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.45,
+            "lineColor": "#1e40af",
+            "lineWidth": 1
+          }
+        },
+        "publisher": "CBS via PDOK",
+        "year": 2025,
+        "license": "CC BY 4.0"
+      },
+      "filterExpression": [
+        "==",
+        [
+          "get",
+          "gemeentecode"
+        ],
+        "GM0344"
+      ],
+      "quickFilters": [
+        {
+          "id": "utrecht-municipality",
+          "field": "gemeentecode",
+          "kind": "categorical",
+          "values": [
+            "GM0344"
+          ]
+        }
+      ],
+      "popup": {
+        "click": true,
+        "hover": true,
+        "titleField": "buurtnaam",
+        "showFeatureId": false,
+        "fields": [
+          {
+            "field": "buurtcode",
+            "label": "Neighbourhood code"
+          },
+          {
+            "field": "aantal_inwoners",
+            "label": "Residents",
+            "kind": "number",
+            "format": {
+              "thousands": true
+            }
+          },
+          {
+            "field": "bevolkingsdichtheid_inwoners_per_km2",
+            "label": "Population density",
+            "kind": "number",
+            "format": {
+              "thousands": true,
+              "suffix": " / km²"
+            },
+            "hover": true
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    }
+  ],
+  "styles": {},
+  "metadata": {
+    "authoring": "ChatGPT repository template",
+    "dataYear": 2025,
+    "license": "CC BY 4.0"
+  },
+  "legend": {
+    "title": "Population density",
+    "groupByLayer": true,
+    "order": [
+      "investment-priority-lab-results",
+      "cbs-utrecht-buurten-2025"
+    ],
+    "overrides": {},
+    "panelVisible": true,
+    "panelCollapsed": false,
+    "panelPosition": "top-left",
+    "customEntries": {
+      "investment-priority-lab-results": {
+        "title": "Within-Utrecht density rank",
+        "items": [
+          {
+            "label": "0 · low",
+            "color": "#2166ac",
+            "shape": "square"
+          },
+          {
+            "label": "20",
+            "color": "#67a9cf",
+            "shape": "square"
+          },
+          {
+            "label": "40",
+            "color": "#d1e5f0",
+            "shape": "square"
+          },
+          {
+            "label": "60",
+            "color": "#fddbc7",
+            "shape": "square"
+          },
+          {
+            "label": "80",
+            "color": "#ef8a62",
+            "shape": "square"
+          },
+          {
+            "label": "100 · high",
+            "color": "#b2182b",
+            "shape": "square"
+          },
+          {
+            "label": "Missing score",
+            "color": "#8a8a8a",
+            "shape": "square"
+          }
+        ]
+      }
+    }
+  },
+  "interaction": {
+    "identify": [
+      "cbs-utrecht-buurten-2025"
+    ],
+    "controls": {
+      "search": true,
+      "scale": true,
+      "attribution": true
+    }
+  },
+  "dashboardColumns": 2,
+  "selectedLayerId": "investment-priority-lab-results",
+  "plugins": {
+    "manifestUrls": [],
+    "activePluginIds": [
+      "maplibre-layer-control",
+      "investment-priority-lab"
+    ],
+    "mapControlPositions": {
+      "maplibre-layer-control": "top-right"
+    },
+    "settings": {
+      "investment-priority-lab": {
+        "sourceLayerId": "cbs-utrecht-buurten-2025",
+        "resultLayerName": "Population density rank",
+        "analysisUnit": "CBS neighbourhoods",
+        "analysisYear": 2025,
+        "indicators": [
+          {
+            "id": "population-density",
+            "title": "Population density",
+            "description": "Residents per square kilometre.",
+            "field": "bevolkingsdichtheid_inwoners_per_km2",
+            "direction": "higher-is-worse",
+            "minValid": 0,
+            "quality": 1,
+            "year": 2025,
+            "unit": "residents/km²"
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "density",
+            "title": "Population density",
+            "description": "One indicator, full weight. Higher values mean higher density, not worse conditions.",
+            "weights": {
+              "population-density": 1
+            }
+          }
+        ],
+        "activeScenarioId": "density",
+        "viewMode": "scenario",
+        "panelOpen": false,
+        "deferredLayerIds": [
+          "investment-priority-lab-results"
+        ]
+      }
+    }
+  },
+  "widgets": [
+    {
+      "id": "density-distribution",
+      "layerId": "cbs-utrecht-buurten-2025",
+      "type": "histogram",
+      "field": "bevolkingsdichtheid_inwoners_per_km2",
+      "bins": 10,
+      "title": "Population density"
+    },
+    {
+      "id": "density-max",
+      "layerId": "cbs-utrecht-buurten-2025",
+      "type": "indicator",
+      "field": "bevolkingsdichtheid_inwoners_per_km2",
+      "indicatorAggregation": "max",
+      "title": "Highest neighbourhood density",
+      "suffix": " residents/km²"
+    }
+  ]
+}

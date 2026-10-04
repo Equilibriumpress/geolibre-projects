@@ -1,0 +1,58 @@
+{
+  "featured": "map",
+  "outputs": [
+    {
+      "id": "map",
+      "title": "Interactive map",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "analysis",
+      "title": "Analysis & method",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    },
+    {
+      "id": "dashboard",
+      "title": "Density dashboard",
+      "kind": "dashboard",
+      "mode": "deep-link",
+      "output": "dashboard",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view",
+      "primary": false
+    },
+    {
+      "id": "data",
+      "title": "Density data exports",
+      "kind": "data",
+      "mode": "deep-link",
+      "output": "data",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export",
+      "primary": false
+    }
+  ]
+}
