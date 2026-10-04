@@ -18,9 +18,9 @@ widgets and analysis used by the other project outputs.
 
 ## ChatGPT authoring protocol
 
-When a user asks for a TikTok, Reel, Short or other analysis video:
+When a user asks for a TikTok, Reel, Short, route video or other project video:
 
-1. Choose the policy question or analytical finding before writing scenes.
+1. Choose the analytical finding, route or spatial story before writing scenes.
 2. Reuse project scenario ids, layer ids, widget ids and Story Map chapters.
 3. Pick the appropriate render preset:
    - `tiktok`, `reel`, `short`: 1080 × 1920, 9:16.
@@ -69,8 +69,15 @@ Browser export composites the live map and video overlays onto a dedicated
 canvas at the selected social resolution and records that canvas through
 `MediaRecorder`.
 
-WebM is the portable browser fallback. MP4 should be treated as an optional
-codec/browser capability until a dedicated transcoding path exists.
+Preview and recording use the same playback clock. Scene boundaries, cues,
+camera transitions, overlays and export progress therefore resolve against one
+timeline. A `fly` scene honors its authored `camera.transitionMs` in preview
+and recording.
+
+MP4 and WebM are explicit export choices. MP4 uses an H.264-capable
+`MediaRecorder` path when the browser exposes one. Choosing MP4 never silently
+falls back to WebM. If MP4 is unavailable, GeoLibre reports that limitation and
+the user may explicitly select WebM.
 
 ## Reproducibility
 
@@ -88,3 +95,47 @@ The composer and agent workflows share `createVisualStory(request)`. The request
 ## 3D flyover presets
 
 The composer includes engine-neutral camera presets for city overview, low flyover, orbit, route follow, terrain reveal, building reveal, data extrusion reveal, globe-to-city and city-to-detail. Presets marked Cesium are intended for terrain, 3D Tiles or globe-heavy scenes, while lighter 2.5D sequences remain suitable for MapLibre.
+
+
+## Route video
+
+A route video remains a normal GeoLibre project. Store the route as a GeoJSON
+LineString layer in `project.geolibre` and reference that layer from a scene:
+
+```json
+{
+  "id": "route-follow",
+  "type": "map",
+  "durationMs": 12000,
+  "routeLayerId": "scenic-route",
+  "routeFollow": {
+    "samples": 10,
+    "zoom": 11.5,
+    "pitch": 70
+  }
+}
+```
+
+The video compiler samples the existing LineString by distance, derives camera
+bearing from the geometry and expands the scene into camera segments while
+preserving the authored duration. Do not duplicate the route coordinates in
+`video-story.json`.
+
+For a photo stop, create a Story Map chapter with its camera, title, text and
+`image`, then reference it with `sourceStoryChapterId`. Video preview and
+recording inherit the same chapter camera and image. Recording preloads chapter
+images before capture so inaccessible media fails before the video starts.
+
+A typical route project therefore needs only:
+
+```text
+project.geolibre
+route.geojson
+video-story.json
+outputs.json
+sources.json
+VIDEO_REQUEST.md
+```
+
+ChatGPT should author and revise these project files rather than adding
+route-specific application code.
