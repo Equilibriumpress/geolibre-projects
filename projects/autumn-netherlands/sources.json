@@ -1,0 +1,59 @@
+{
+  "sources": [
+    {
+      "id": "modis-ndvi",
+      "name": "MODIS Terra NDVI 16-Day",
+      "publisher": "NASA GIBS / NASA LP DAAC",
+      "url": "https://gibs.earthdata.nasa.gov/layer-metadata/v1.0/MODIS_Terra_L3_NDVI_16Day.json",
+      "retrieved": "2026-10-04",
+      "role": "Historische groenheidsvisualisatie",
+      "license": "NASA Earthdata open data, bronvermelding",
+      "snapshot": null,
+      "notes": "WMTS Level9 en WMS EPSG:3857. Composietdatums uit officiële WMTS capabilities. Geen RGB-afgeleide meetwaarden."
+    },
+    {
+      "id": "viirs-evi",
+      "name": "VIIRS NOAA-20 EVI rolling 8-day",
+      "publisher": "NASA GIBS / LANCE",
+      "url": "https://gibs.earthdata.nasa.gov/layer-metadata/v1.0/VIIRS_NOAA20_EVI_8Day.json",
+      "retrieved": "2026-10-04",
+      "role": "Recente groenheidsvisualisatie",
+      "license": "NASA Earthdata open data, bronvermelding",
+      "snapshot": null,
+      "notes": "GIBS layerPeriod Daily. Beschikbare datums gecontroleerd tot 2026-10-03."
+    },
+    {
+      "id": "capabilities",
+      "name": "NASA GIBS Web Mercator WMTS capabilities",
+      "publisher": "NASA GIBS",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml",
+      "retrieved": "2026-10-04",
+      "role": "Bron voor tijdstappen, tegelmatrix en kaartformaten",
+      "license": "NASA Earthdata open data, bronvermelding",
+      "snapshot": null,
+      "notes": "Beschikbaarheid vastgelegd op 2026-10-04."
+    },
+    {
+      "id": "basemap",
+      "name": "OpenFreeMap Positron",
+      "publisher": "OpenFreeMap / OpenStreetMap contributors",
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "retrieved": "2026-10-04",
+      "role": "Achtergrondkaart",
+      "license": "OpenStreetMap ODbL, OpenFreeMap style licenses",
+      "snapshot": null,
+      "notes": "Attributie volgt de basemapstijl."
+    },
+    {
+      "id": "study-areas",
+      "name": "Autumn Netherlands studievensters",
+      "publisher": "Equilibriumpress",
+      "url": "https://github.com/Equilibriumpress/geolibre-projects/tree/main/projects/autumn-netherlands",
+      "retrieved": "2026-10-04",
+      "role": "Indicatieve gebiedselectie en oriëntatiepunten",
+      "license": "MIT",
+      "snapshot": null,
+      "notes": "Handmatig gekozen rechthoeken en punten. Geen officiële grens of geïnventariseerd bos."
+    }
+  ]
+}

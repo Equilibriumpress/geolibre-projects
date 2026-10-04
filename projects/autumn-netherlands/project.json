@@ -1,0 +1,38 @@
+{
+  "id": "autumn-netherlands",
+  "title": "Autumn Netherlands",
+  "summary": "Volg NASA-groenheid door de herfst in de Utrechtse Heuvelrug, Veluwe en Twente, met tijdschuif, augustus/november-vergelijking en recente VIIRS-beelden.",
+  "status": "published",
+  "location": "Utrechtse Heuvelrug, Veluwe en Twente, Nederland",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "autumn",
+    "netherlands",
+    "nasa",
+    "vegetation",
+    "time-slider",
+    "swipe"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "mixed",
+  "outputs": [
+    "interactive-map",
+    "viewer",
+    "storymap"
+  ],
+  "outputRegistry": "outputs.json",
+  "question": "Hoe verandert de satellietwaargenomen groenheid door de herfst in drie Nederlandse studiegebieden?",
+  "interpretation": "Vergelijk dezelfde vegetatie-index op verschillende beschikbare datums. Studievensters bevatten meerdere landgebruikstypen. Er zijn geen numerieke bosgemiddelden of herfstpiekdatums berekend.",
+  "limitations": [
+    "NDVI en EVI meten groenheid en geven geen directe gele, rode of oranje bladkleur.",
+    "Studievensters zijn handmatig gekozen rechthoeken, geen officiële grenzen of bosmasker.",
+    "NASA-tegels zijn visualisaties. Numerieke trendanalyse vereist de oorspronkelijke rasterwaarden en kwaliteitsgegevens.",
+    "De complete tijdschuif gebruikt 2025. Recente EVI toont beschikbare datums in september–oktober 2026.",
+    "De recente datums zijn vastgelegd bij publicatie en worden niet automatisch bijgewerkt.",
+    "MODIS en VIIRS hebben verschillende indices en mogen niet als één homogene cijferreeks worden samengevoegd."
+  ],
+  "analysisYear": 2025
+}

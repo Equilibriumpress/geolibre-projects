@@ -1,0 +1,74 @@
+{
+  "featured": "season",
+  "outputs": [
+    {
+      "id": "season",
+      "title": "Herfst door de tijd · 2025",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "description": "Open de kaart en gebruik de tijdschuif van augustus tot november.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "comparison",
+      "title": "Augustus / november vergelijken",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "project": "comparison.geolibre",
+      "description": "Links augustus, rechts november. Verschuif de scheidingslijn.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "recent",
+      "title": "Recente groenheid · 2026",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "project": "recent.geolibre",
+      "description": "VIIRS EVI tot 3 oktober 2026, dagelijks product met voortschrijdend venster van acht dagen.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "regions",
+      "title": "Verken de drie gebieden",
+      "kind": "story",
+      "mode": "deep-link",
+      "output": "story",
+      "description": "Kaartverhaal met camera-instellingen per studiegebied.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "method",
+      "title": "Bronnen en werkwijze",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "README.md",
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    }
+  ]
+}

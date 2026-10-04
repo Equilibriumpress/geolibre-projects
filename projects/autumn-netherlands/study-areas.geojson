@@ -1,0 +1,119 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "heuvelrug",
+      "properties": {
+        "region_id": "heuvelrug",
+        "name": "Utrechtse Heuvelrug",
+        "extent_kind": "Indicatief studievenster",
+        "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+        "color": "#b45309"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.23,
+              51.94
+            ],
+            [
+              5.65,
+              51.94
+            ],
+            [
+              5.65,
+              52.23
+            ],
+            [
+              5.23,
+              52.23
+            ],
+            [
+              5.23,
+              51.94
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "veluwe",
+      "properties": {
+        "region_id": "veluwe",
+        "name": "Veluwe",
+        "extent_kind": "Indicatief studievenster",
+        "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+        "color": "#0f766e"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.6,
+              51.99
+            ],
+            [
+              6.17,
+              51.99
+            ],
+            [
+              6.17,
+              52.47
+            ],
+            [
+              5.6,
+              52.47
+            ],
+            [
+              5.6,
+              51.99
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "twente",
+      "properties": {
+        "region_id": "twente",
+        "name": "Twente",
+        "extent_kind": "Indicatief studievenster",
+        "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+        "color": "#4338ca"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.42,
+              52.1
+            ],
+            [
+              7.1,
+              52.1
+            ],
+            [
+              7.1,
+              52.55
+            ],
+            [
+              6.42,
+              52.55
+            ],
+            [
+              6.42,
+              52.1
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
