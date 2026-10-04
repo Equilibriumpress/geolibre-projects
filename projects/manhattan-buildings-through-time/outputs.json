@@ -1,0 +1,31 @@
+{
+  "featured": "time-map",
+  "outputs": [
+    {
+      "id": "time-map",
+      "title": "3D buildings through time",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "description": "Open the 3D Manhattan project with the Time Slider ready at the bottom of the map. Press Play to replay 1850–2025.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "analysis",
+      "title": "Method & source query",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    }
+  ]
+}
