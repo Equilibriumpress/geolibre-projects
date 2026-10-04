@@ -1,0 +1,65 @@
+{
+  "sources": [
+    {
+      "id": "norwegian-scenic-route-geiranger-trollstigen",
+      "name": "Norwegian Scenic Route Geiranger–Trollstigen",
+      "publisher": "Norwegian Public Roads Administration · Norwegian Scenic Routes",
+      "url": "https://www.nasjonaleturistveger.no/en/routes/geiranger--trollstigen/",
+      "retrieved": "2026-10-04",
+      "license": "Public route information; verify reuse terms for downloaded GPX",
+      "role": "Authoritative route length, endpoints, ferry information, seasonal notes and official viewpoints.",
+      "snapshot": null,
+      "notes": "The page links the official GPX. This first project stores a simplified authoring LineString through the published endpoints and viewpoints."
+    },
+    {
+      "id": "official-route-gpx",
+      "name": "Geiranger–Trollstigen GPX download",
+      "publisher": "Norwegian Public Roads Administration · Norwegian Scenic Routes",
+      "url": "https://www.nasjonaleturistveger.no/siteassets/turistvegene/08-geiranger---trollstigen/9-for-nedlasting/nasjonal_turistveg_geiranger-trollstigen.gpx",
+      "retrieved": "2026-10-04",
+      "license": "Refer to Norwegian Scenic Routes terms",
+      "role": "Authoritative navigation track referenced for future exact geometry replacement.",
+      "snapshot": null
+    },
+    {
+      "id": "commons-geirangerfjord",
+      "name": "Geirangerfjord 1.jpg",
+      "publisher": "Wikimedia Commons · Sundgot",
+      "url": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_1.jpg",
+      "retrieved": "2026-10-04",
+      "license": "CC BY-SA 4.0",
+      "role": "Story Map and video image for the Geiranger/Flydalsjuvet section.",
+      "snapshot": null
+    },
+    {
+      "id": "commons-ornesvingen",
+      "name": "Ørnesvingen.JPG",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:%C3%98rnesvingen.JPG",
+      "retrieved": "2026-10-04",
+      "license": "See Wikimedia Commons file page",
+      "role": "Story Map and video image for Ørnesvingen.",
+      "snapshot": null
+    },
+    {
+      "id": "commons-gudbrandsjuvet",
+      "name": "Gudbrandsjuvet.jpg",
+      "publisher": "Wikimedia Commons · GuoJunjun",
+      "url": "https://commons.wikimedia.org/wiki/File:Gudbrandsjuvet.jpg",
+      "retrieved": "2026-10-04",
+      "license": "CC BY-SA 3.0 NO",
+      "role": "Story Map and video image for Gudbrandsjuvet.",
+      "snapshot": null
+    },
+    {
+      "id": "commons-trollstigen",
+      "name": "Trollstigen.jpg",
+      "publisher": "Wikimedia Commons · Yair-haklai",
+      "url": "https://commons.wikimedia.org/wiki/File:Trollstigen.jpg",
+      "retrieved": "2026-10-04",
+      "license": "CC BY-SA 4.0",
+      "role": "Story Map and video image for Trollstigen.",
+      "snapshot": null
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "version": "0.1.0",
+  "title": "Norway’s Scenic Camper Route · Geiranger–Trollstigen",
+  "preset": "tiktok",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "output": {
+    "bitrateMbps": 20,
+    "showSafeArea": true,
+    "includeBranding": true
+  },
+  "scenes": [
+    {
+      "id": "globe",
+      "type": "title",
+      "durationMs": 3000,
+      "headline": "Norway’s scenic camper route",
+      "subhead": "Geiranger → Trollstigen · 104 km",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          7.37,
+          62.28
+        ],
+        "zoom": 2.1,
+        "pitch": 12,
+        "bearing": 0,
+        "transitionMs": 2400
+      },
+      "caption": "From the globe to Western Norway"
+    },
+    {
+      "id": "norway",
+      "type": "map",
+      "durationMs": 3500,
+      "headline": "Western Norway",
+      "subhead": "Fjords, ferry, valleys and mountain roads",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          7.37,
+          62.28
+        ],
+        "zoom": 6.3,
+        "pitch": 32,
+        "bearing": -10,
+        "transitionMs": 2900
+      }
+    },
+    {
+      "id": "route-overview",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "Geiranger–Trollstigen",
+      "subhead": "Official Scenic Route · 104 km",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          7.37,
+          62.28
+        ],
+        "zoom": 8.1,
+        "pitch": 55,
+        "bearing": -12,
+        "transitionMs": 3400
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "norway-camper-route",
+          "visible": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "drive",
+      "type": "map",
+      "durationMs": 15000,
+      "headline": "Follow Route 63",
+      "caption": "Geiranger → Eidsdal ferry → Valldal → Trollstigen",
+      "routeLayerId": "norway-camper-route",
+      "routeFollow": {
+        "samples": 12,
+        "zoom": 11.4,
+        "pitch": 70
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "norway-camper-route",
+          "visible": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "flydalsjuvet-stop",
+      "type": "map",
+      "durationMs": 4500,
+      "sourceStoryChapterId": "flydalsjuvet",
+      "headline": "Flydalsjuvet",
+      "caption": "Look back over Geirangerfjord",
+      "transition": "fly"
+    },
+    {
+      "id": "ornesvingen-stop",
+      "type": "map",
+      "durationMs": 4500,
+      "sourceStoryChapterId": "ornesvingen",
+      "headline": "Ørnesvingen",
+      "caption": "Eleven hairpins above the fjord",
+      "transition": "fly"
+    },
+    {
+      "id": "gudbrandsjuvet-stop",
+      "type": "map",
+      "durationMs": 4500,
+      "sourceStoryChapterId": "gudbrandsjuvet",
+      "headline": "Gudbrandsjuvet",
+      "caption": "A gorge cut by the Valldøla river",
+      "transition": "fly"
+    },
+    {
+      "id": "trollstigen-stop",
+      "type": "map",
+      "durationMs": 5000,
+      "sourceStoryChapterId": "trollstigen",
+      "headline": "Trollstigen",
+      "caption": "Finish above the hairpins",
+      "transition": "fly"
+    },
+    {
+      "id": "outro",
+      "type": "cta",
+      "durationMs": 4000,
+      "headline": "Save the route",
+      "subhead": "Open the interactive GeoLibre project for the full map.",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          7.37,
+          62.28
+        ],
+        "zoom": 8.2,
+        "pitch": 48,
+        "bearing": 0,
+        "transitionMs": 2800
+      },
+      "caption": "Geiranger–Trollstigen · Norway"
+    }
+  ],
+  "audio": {
+    "music": "",
+    "musicVolume": 0.12,
+    "narrationVolume": 1
+  }
+}

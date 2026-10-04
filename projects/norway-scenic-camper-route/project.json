@@ -1,0 +1,36 @@
+{
+  "id": "norway-scenic-camper-route",
+  "title": "Norway Scenic Camper Route · Geiranger–Trollstigen",
+  "summary": "A GeoLibre 3D route story and vertical video project for the 104 km Norwegian Scenic Route Geiranger–Trollstigen.",
+  "status": "published",
+  "location": "Møre og Romsdal, Norway",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "norway",
+    "camper",
+    "road-trip",
+    "scenic-route",
+    "3d",
+    "video"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "mixed",
+  "outputs": [
+    "interactive-map",
+    "viewer",
+    "storymap",
+    "video"
+  ],
+  "outputRegistry": "outputs.json",
+  "videoStory": "video-story.json",
+  "question": "How can GeoLibre turn the Geiranger–Trollstigen Scenic Route into a self-contained 3D vertical route video?",
+  "interpretation": "The project demonstrates one repository-authored route, four Story Map photo stops and a geometry-driven route-follow scene rendered from the same GeoLibre project.",
+  "limitations": [
+    "The embedded LineString is a simplified authoring geometry through official endpoints and viewpoints, not a navigation-grade replacement for the official GPX.",
+    "Road openings, weather restrictions and ferry times change. Check current Norwegian road and ferry information before driving.",
+    "Photo availability depends on Wikimedia Commons and the listed open licences."
+  ]
+}
