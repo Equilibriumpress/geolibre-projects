@@ -16,7 +16,7 @@ describe("Manhattan Buildings Through Time project", () => {
     ]);
 
     assert.equal(manifest.status, "published");
-    assert.equal(project.mapView.pitch, 59.5);
+    assert.ok(Math.abs(project.mapView.pitch - 59.5) < 1e-9);
 
     const buildings = project.layers.find((layer: { metadata?: { geolensDatasetId?: string } }) =>
       layer.metadata?.geolensDatasetId === "4a0bd0db-cd92-424a-8a2e-62d270ae918a"
