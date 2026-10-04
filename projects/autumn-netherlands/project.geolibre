@@ -1,0 +1,480 @@
+{
+  "version": "0.1.0",
+  "name": "Autumn Netherlands",
+  "mapView": {
+    "center": [
+      6.13,
+      52.25
+    ],
+    "zoom": 7.8,
+    "bearing": 0,
+    "pitch": 0
+  },
+  "primaryRenderer": "maplibre",
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/positron",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "layers": [
+    {
+      "id": "autumn-study-areas",
+      "name": "Studievensters · indicatieve grenzen",
+      "type": "geojson",
+      "source": {
+        "type": "geojson"
+      },
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "id": "heuvelrug",
+            "properties": {
+              "region_id": "heuvelrug",
+              "name": "Utrechtse Heuvelrug",
+              "extent_kind": "Indicatief studievenster",
+              "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+              "color": "#b45309"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    5.23,
+                    51.94
+                  ],
+                  [
+                    5.65,
+                    51.94
+                  ],
+                  [
+                    5.65,
+                    52.23
+                  ],
+                  [
+                    5.23,
+                    52.23
+                  ],
+                  [
+                    5.23,
+                    51.94
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "id": "veluwe",
+            "properties": {
+              "region_id": "veluwe",
+              "name": "Veluwe",
+              "extent_kind": "Indicatief studievenster",
+              "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+              "color": "#0f766e"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    5.6,
+                    51.99
+                  ],
+                  [
+                    6.17,
+                    51.99
+                  ],
+                  [
+                    6.17,
+                    52.47
+                  ],
+                  [
+                    5.6,
+                    52.47
+                  ],
+                  [
+                    5.6,
+                    51.99
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "id": "twente",
+            "properties": {
+              "region_id": "twente",
+              "name": "Twente",
+              "extent_kind": "Indicatief studievenster",
+              "interpretation": "Geen officiële gebiedsgrens of bosmasker",
+              "color": "#4338ca"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    6.42,
+                    52.1
+                  ],
+                  [
+                    7.1,
+                    52.1
+                  ],
+                  [
+                    7.1,
+                    52.55
+                  ],
+                  [
+                    6.42,
+                    52.55
+                  ],
+                  [
+                    6.42,
+                    52.1
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#b45309",
+        "strokeColor": "#b45309",
+        "strokeWidth": 2,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "popup": {
+        "hover": true,
+        "click": true,
+        "titleField": "name",
+        "fields": [
+          {
+            "field": "extent_kind",
+            "label": "Gebied"
+          },
+          {
+            "field": "interpretation",
+            "label": "Gebruik"
+          }
+        ]
+      },
+      "metadata": {
+        "publisher": "Project author",
+        "identifiable": true
+      }
+    },
+    {
+      "id": "autumn-places",
+      "name": "Boslocaties · oriëntatiepunten",
+      "type": "geojson",
+      "source": {
+        "type": "geojson"
+      },
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Amerongse Berg",
+              "region_id": "heuvelrug",
+              "role": "Oriëntatiepunt, geen lokale herfstmeting"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                5.491,
+                52.001
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Speulderbos",
+              "region_id": "veluwe",
+              "role": "Oriëntatiepunt, geen lokale herfstmeting"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                5.706,
+                52.267
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Lutterzand",
+              "region_id": "twente",
+              "role": "Oriëntatiepunt, geen lokale herfstmeting"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                7.009,
+                52.332
+              ]
+            }
+          }
+        ]
+      },
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#111827",
+        "strokeColor": "#ffffff",
+        "strokeWidth": 2,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 1,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0,
+        "labels": {
+          "enabled": true,
+          "field": "name",
+          "size": 13,
+          "color": "#111827",
+          "haloColor": "#ffffff",
+          "haloWidth": 2,
+          "placement": "point",
+          "allowOverlap": false,
+          "offsetY": 1.3
+        }
+      },
+      "popup": {
+        "hover": true,
+        "click": true,
+        "titleField": "name",
+        "fields": [
+          {
+            "field": "role",
+            "label": "Betekenis"
+          }
+        ]
+      }
+    }
+  ],
+  "styles": {},
+  "preferences": {
+    "map": {
+      "restrictBounds": false,
+      "bounds": [
+        4.8,
+        51.5,
+        7.5,
+        53.0
+      ],
+      "minZoom": 5,
+      "maxZoom": 13,
+      "maxPitch": 60,
+      "renderWorldCopies": false,
+      "projection": "mercator",
+      "scaleUnit": "metric"
+    },
+    "environmentVariables": []
+  },
+  "metadata": {
+    "repositoryProject": true,
+    "projectId": "autumn-netherlands",
+    "description": "NASA-groenheid door de herfst voor Utrechtse Heuvelrug, Veluwe en Twente. NDVI/EVI zijn vegetatie-indices, geen meting van zichtbare herfstkleuren.",
+    "provenance": "sources.json",
+    "numericAnalysisStatus": "Geen numerieke rasterwaarden of herfstpiekberekening in deze visualisatie."
+  },
+  "plugins": {
+    "manifestUrls": [],
+    "activePluginIds": [
+      "maplibre-layer-control",
+      "maplibre-gl-time-slider"
+    ],
+    "mapControlPositions": {
+      "maplibre-layer-control": "top-right",
+      "maplibre-gl-time-slider": "bottom-left"
+    },
+    "settings": {
+      "maplibre-gl-time-slider": {
+        "startDate": "2025-08-13",
+        "endDate": "2025-11-17",
+        "dates": [
+          "2025-08-13",
+          "2025-08-29",
+          "2025-09-14",
+          "2025-09-30",
+          "2025-10-16",
+          "2025-11-01",
+          "2025-11-17"
+        ],
+        "interval": 1,
+        "granularity": "day",
+        "granularities": [
+          "day"
+        ],
+        "currentDate": "2025-08-13",
+        "speed": 1500,
+        "loop": false,
+        "autoPlay": false,
+        "collapsed": false,
+        "theme": "light",
+        "beforeId": "layer-autumn-study-areas-fill",
+        "sources": [
+          {
+            "type": "wms",
+            "id": "autumn-ndvi-timeline",
+            "name": "NDVI · herfst 2025 · 16-daagse composieten",
+            "baseUrl": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&STYLES=&FORMAT=image/png&TRANSPARENT=true&SRS=EPSG:3857&WIDTH=256&HEIGHT=256&BBOX={bbox-epsg-3857}",
+            "layers": "MODIS_Terra_L3_NDVI_16Day",
+            "timeFormat": "YYYY-MM-DD",
+            "tileSize": 256,
+            "bounds": [
+              4.8,
+              51.5,
+              7.5,
+              53.0
+            ],
+            "opacity": 0.9,
+            "visible": true
+          }
+        ]
+      }
+    }
+  },
+  "storymap": {
+    "title": "Autumn Netherlands",
+    "subtitle": "Groenheid door de herfst · NASA MODIS / VIIRS",
+    "byline": "Autumn Atlas · GeoLibre",
+    "footer": "NASA GIBS · studievensters zijn indicatief · NDVI/EVI meten groenheid",
+    "theme": "light",
+    "showMarkers": false,
+    "inset": false,
+    "chapters": [
+      {
+        "id": "overview",
+        "title": "Drie gebieden, één herfst",
+        "description": "<p>Gebruik de tijdschuif voor de complete herfst van 2025. De beelden tonen groenheid, geen voorspelde piek van herfstkleuren.</p>",
+        "alignment": "left",
+        "location": {
+          "center": [
+            6.13,
+            52.25
+          ],
+          "zoom": 7.8,
+          "bearing": 0,
+          "pitch": 0
+        },
+        "mapAnimation": "flyTo",
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "heuvelrug",
+        "title": "Utrechtse Heuvelrug",
+        "description": "<p>Het gekaderde venster helpt dit gebied te vergelijken. Het bevat ook landbouw, bebouwing en naaldbos. Bekijk meerdere waarnemingsperioden en vergelijk dezelfde locatie.</p><p>De boslocatie is een oriëntatiepunt, geen lokale herfstmeting.</p>",
+        "alignment": "left",
+        "location": {
+          "center": [
+            5.44,
+            52.08
+          ],
+          "zoom": 9.7,
+          "pitch": 0,
+          "bearing": 0
+        },
+        "mapAnimation": "flyTo",
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "veluwe",
+        "title": "Veluwe",
+        "description": "<p>Het gekaderde venster helpt dit gebied te vergelijken. Het bevat ook landbouw, bebouwing en naaldbos. Bekijk meerdere waarnemingsperioden en vergelijk dezelfde locatie.</p><p>De boslocatie is een oriëntatiepunt, geen lokale herfstmeting.</p>",
+        "alignment": "left",
+        "location": {
+          "center": [
+            5.88,
+            52.23
+          ],
+          "zoom": 9.0,
+          "pitch": 0,
+          "bearing": 0
+        },
+        "mapAnimation": "flyTo",
+        "onChapterEnter": [],
+        "onChapterExit": []
+      },
+      {
+        "id": "twente",
+        "title": "Twente",
+        "description": "<p>Het gekaderde venster helpt dit gebied te vergelijken. Het bevat ook landbouw, bebouwing en naaldbos. Bekijk meerdere waarnemingsperioden en vergelijk dezelfde locatie.</p><p>De boslocatie is een oriëntatiepunt, geen lokale herfstmeting.</p>",
+        "alignment": "left",
+        "location": {
+          "center": [
+            6.76,
+            52.32
+          ],
+          "zoom": 9.1,
+          "pitch": 0,
+          "bearing": 0
+        },
+        "mapAnimation": "flyTo",
+        "onChapterEnter": [],
+        "onChapterExit": []
+      }
+    ]
+  },
+  "legend": {
+    "title": "Groenheid · NDVI",
+    "groupByLayer": true,
+    "panelVisible": true,
+    "panelPosition": "top-left",
+    "order": [],
+    "overrides": {},
+    "customEntries": {
+      "autumn-ndvi-timeline": {
+        "title": "NDVI · vegetatie-index",
+        "items": [
+          {
+            "label": "Lage groenheid",
+            "color": "#ddc9bc",
+            "shape": "square"
+          },
+          {
+            "label": "Gemiddelde groenheid",
+            "color": "#bfde77",
+            "shape": "square"
+          },
+          {
+            "label": "Hoge groenheid",
+            "color": "#398700",
+            "shape": "square"
+          },
+          {
+            "label": "Zeer hoge groenheid",
+            "color": "#056400",
+            "shape": "square"
+          }
+        ]
+      }
+    }
+  }
+}

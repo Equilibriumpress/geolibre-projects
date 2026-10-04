@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Amerongse Berg",
+        "region_id": "heuvelrug",
+        "role": "Oriëntatiepunt, geen lokale herfstmeting"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.491,
+          52.001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Speulderbos",
+        "region_id": "veluwe",
+        "role": "Oriëntatiepunt, geen lokale herfstmeting"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.706,
+          52.267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lutterzand",
+        "region_id": "twente",
+        "role": "Oriëntatiepunt, geen lokale herfstmeting"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.009,
+          52.332
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-04",
+  "scope": "NASA capabilities, WMTS and WMS returned valid PNG responses. GPU/Safari/device rendering pending.",
+  "checks": [
+    {
+      "id": "august",
+      "date": "2025-08-13",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=MODIS_Terra_L3_NDVI_16Day&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&SRS=EPSG%3A3857&WIDTH=1000&HEIGHT=650&BBOX=567729.4030456952%2C6773048.83963686%2C795934.359171906%2C6918517.993287871&TIME=2025-08-13",
+      "status": 200,
+      "bytes": 278009,
+      "contentType": "image/png",
+      "corsAllowOrigin": "*"
+    },
+    {
+      "id": "november",
+      "date": "2025-11-01",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=MODIS_Terra_L3_NDVI_16Day&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&SRS=EPSG%3A3857&WIDTH=1000&HEIGHT=650&BBOX=567729.4030456952%2C6773048.83963686%2C795934.359171906%2C6918517.993287871&TIME=2025-11-01",
+      "status": 200,
+      "bytes": 279676,
+      "contentType": "image/png",
+      "corsAllowOrigin": "*"
+    }
+  ],
+  "wmtsChecks": [
+    {
+      "id": "ndvi-august",
+      "date": "2025-08-13",
+      "status": 200,
+      "bytes": 31845
+    },
+    {
+      "id": "ndvi-november",
+      "date": "2025-11-01",
+      "status": 200,
+      "bytes": 34375
+    },
+    {
+      "id": "viirs-evi",
+      "date": "2026-10-03",
+      "status": 200,
+      "bytes": 36778
+    }
+  ],
+  "sources": [
+    {
+      "id": "august",
+      "date": "2025-08-13",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=MODIS_Terra_L3_NDVI_16Day&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&SRS=EPSG%3A3857&WIDTH=1000&HEIGHT=650&BBOX=567729.4030456952%2C6773048.83963686%2C795934.359171906%2C6918517.993287871&TIME=2025-08-13",
+      "status": 200,
+      "bytes": 278009,
+      "contentType": "image/png",
+      "corsAllowOrigin": "*"
+    },
+    {
+      "id": "november",
+      "date": "2025-11-01",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=MODIS_Terra_L3_NDVI_16Day&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&SRS=EPSG%3A3857&WIDTH=1000&HEIGHT=650&BBOX=567729.4030456952%2C6773048.83963686%2C795934.359171906%2C6918517.993287871&TIME=2025-11-01",
+      "status": 200,
+      "bytes": 279676,
+      "contentType": "image/png",
+      "corsAllowOrigin": "*"
+    }
+  ],
+  "fallbackPolicy": "Ontbrekende NASA-beelden blijven ontbrekend. Geen vervangende datums, interpolatie of geschatte herfstpiek."
+}
