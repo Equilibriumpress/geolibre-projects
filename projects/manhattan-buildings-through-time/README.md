@@ -2,7 +2,7 @@
 
 This project brings the official GeoLibre **Manhattan Buildings Through Time** showcase into the repository project catalog.
 
-It is deliberately not a binary copy of the upstream asset. The upstream project currently contains generated GeoLens vector-tile URLs with expiry parameters. This version keeps the same core visual idea and time configuration but loads the authoritative public NYC and MTA sources directly.
+It uses the official GeoLibre project structure and GeoLens vector-tile datasets. The repository stores only non-secret expired `exp=1` bootstrap tile URLs. On project restore, GeoLibre's existing GeoLens integration mints fresh public tile URLs and keeps them refreshed. This preserves the fast upstream rendering path without committing credentials.
 
 ## What it shows
 
@@ -24,7 +24,7 @@ Official full-quality WebM reference render:
 
 https://assets.geolibre.app/demos/nyc-buildings.webm
 
-The upstream example is the visual and functional reference. This repository copy replaces its expiring hosted tile requests with source queries against NYC Open Data and New York State/MTA Open Data.
+The upstream example is the visual and functional reference. This repository copy keeps the same GeoLens dataset IDs, source layers, 3D styling, `era` categories and Time Slider binding. Only the short-lived tile URL itself is replaced by an expired non-secret bootstrap value that GeoLibre heals at runtime.
 
 ## Interpretation
 
