@@ -8,9 +8,12 @@
     "projects:contracts": "node scripts/check-project-contracts.mjs",
     "projects:catalog": "node scripts/build-project-catalog.mjs",
     "projects:routes": "python3 scripts/check-project-routes.py",
-    "projects:url": "node scripts/project-url.mjs"
+    "projects:url": "node scripts/project-url.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "projects:sources": "python3 scripts/check-project-sources.py"
   },
   "dependencies": {
-    "ajv": "8.17.1"
+    "ajv": "8.17.1",
+    "sharp": "^0.34.5"
   }
 }

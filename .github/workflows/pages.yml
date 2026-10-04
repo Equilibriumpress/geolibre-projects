@@ -101,6 +101,7 @@ jobs:
           npm ci
           npm run projects:validate
           npm run projects:contracts
+          npm test
           npm run projects:catalog
           python -m pip install -r requirements-docs.txt
           zensical build --strict

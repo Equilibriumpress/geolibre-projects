@@ -85,7 +85,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Equilibriumpress/geolibre-projects
-      name: GeoLibre fork on GitHub
+      name: Public GeoLibre projects on GitHub
     - icon: fontawesome/solid/heart
       link: https://github.com/sponsors/giswqs
       name: Sponsor GeoLibre on GitHub

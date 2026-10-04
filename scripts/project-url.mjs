@@ -1,3 +1,4 @@
+import { rawProjectBase, appUrl, repositoryUrl, revision } from "./publication-config.mjs";
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -16,13 +17,13 @@ try {
 }
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-const raw = `https://raw.githubusercontent.com/Equilibriumpress/geolibre-projects/main/projects/${slug}/project.geolibre`;
+const raw = `${rawProjectBase}/${slug}/project.geolibre`;
 const encoded = encodeURIComponent(raw);
-const app = "https://equilibriumpress.github.io/geolibre-projects/demo/";
+const app = appUrl;
 
 console.log(`Project: ${manifest.title}`);
 console.log(`Raw:       ${raw}`);
 console.log(`Workspace: ${app}?url=${encoded}`);
 console.log(`Viewer:    ${app}?layout=viewer&url=${encoded}`);
 console.log(`Map only:  ${app}?maponly&url=${encoded}`);
-console.log(`Source:    https://github.com/Equilibriumpress/geolibre-projects/tree/main/projects/${slug}`);
+console.log(`Source:    ${repositoryUrl}/tree/${revision}/projects/${slug}`);
