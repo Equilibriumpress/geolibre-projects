@@ -34,7 +34,7 @@ describe("Norway scenic camper route project", () => {
     assert.equal(story.fps, 30);
     assert.equal(
       story.scenes.reduce((sum: number, scene: { durationMs: number }) => sum + scene.durationMs, 0),
-      27_000,
+      29_400,
     );
 
     const routeScene = story.scenes.find((scene: { routeLayerId?: string }) => scene.routeLayerId);
@@ -59,7 +59,7 @@ describe("Norway scenic camper route project", () => {
       (scene: { sourceStoryChapterId?: string }) => Boolean(scene.sourceStoryChapterId),
     );
     assert.equal(photoStops.length, 4);
-    assert.equal(story.scenes.length, 13);
+    assert.equal(story.scenes.length, 11);
     assert.ok(story.scenes.every((scene: { caption?: string }) => !scene.caption));
     assert.equal(story.output.showSafeArea, false);
     assert.equal(story.output.includeBranding, false);
@@ -68,15 +68,20 @@ describe("Norway scenic camper route project", () => {
 
     const textScenes = story.scenes.filter((scene: { headline?: string }) => Boolean(scene.headline));
     assert.deepEqual(textScenes.map((scene: { headline: string }) => scene.headline), [
-      "104 km. Norway’s wildest camper road.",
+      "104 km through Norway’s fjords",
+      "Western Norway",
       "Geiranger → Trollstigen",
-      "Would you drive this?",
+      "Flydalsjuvet",
+      "Ørnesvingen",
+      "Gudbrandsjuvet",
+      "Trollstigen",
     ]);
-    assert.equal(story.scenes[0].durationMs, 1200);
+    assert.equal(story.scenes[0].durationMs, 1800);
     assert.equal(story.scenes[0].camera.transitionMs, 0);
     assert.ok(story.scenes[0].image);
-    assert.equal(story.scenes.at(-1).image, story.scenes[0].image);
-    assert.equal(story.scenes.at(-1).durationMs, 500);
+    assert.equal(story.scenes.at(-1).durationMs, 4200);
+    assert.equal(story.scenes.at(-1).subhead, "Would you drive this?");
+    assert.ok(photoStops.every((scene: { transition?: string }) => scene.transition === "fly"));
 
     assert.equal(outputs.featured, "video");
     const videoOutput = outputs.outputs.find((output: { id: string }) => output.id === "video");
