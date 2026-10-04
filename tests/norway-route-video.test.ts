@@ -59,6 +59,10 @@ describe("Norway scenic camper route project", () => {
       (scene: { sourceStoryChapterId?: string }) => Boolean(scene.sourceStoryChapterId),
     );
     assert.equal(photoStops.length, 4);
+    assert.equal(story.scenes.length, 12);
+    assert.ok(story.scenes.every((scene: { caption?: string }) => !scene.caption));
+    assert.equal(story.output.showSafeArea, false);
+    assert.equal(story.output.includeBranding, false);
     const chapterIds = new Set(chapters.map((chapter: { id: string }) => chapter.id));
     assert.ok(photoStops.every((scene: { sourceStoryChapterId: string }) => chapterIds.has(scene.sourceStoryChapterId)));
 

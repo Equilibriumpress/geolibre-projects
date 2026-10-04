@@ -6,15 +6,15 @@
   "fps": 30,
   "output": {
     "bitrateMbps": 20,
-    "showSafeArea": true,
-    "includeBranding": true
+    "showSafeArea": false,
+    "includeBranding": false
   },
   "scenes": [
     {
       "id": "globe",
       "type": "title",
-      "durationMs": 2000,
-      "headline": "Norway’s scenic camper route",
+      "durationMs": 2500,
+      "headline": "Norway’s most scenic camper route",
       "subhead": "Geiranger → Trollstigen · 104 km",
       "transition": "cut",
       "camera": {
@@ -25,16 +25,15 @@
         "zoom": 2.1,
         "pitch": 0,
         "bearing": 0,
-        "transitionMs": 1500
-      },
-      "caption": "From the globe to Western Norway"
+        "transitionMs": 0
+      }
     },
     {
       "id": "norway",
       "type": "map",
-      "durationMs": 3000,
+      "durationMs": 2500,
       "headline": "Western Norway",
-      "subhead": "Fjords, ferry, valleys and mountain roads",
+      "subhead": "Fjords, valleys and mountain roads",
       "transition": "fly",
       "camera": {
         "center": [
@@ -44,15 +43,15 @@
         "zoom": 6.3,
         "pitch": 20,
         "bearing": 0,
-        "transitionMs": 2500
+        "transitionMs": 2000
       }
     },
     {
       "id": "route-overview",
       "type": "map",
-      "durationMs": 4000,
-      "headline": "Geiranger–Trollstigen",
-      "subhead": "Official Scenic Route · 104 km",
+      "durationMs": 3000,
+      "headline": "104 km through the fjords",
+      "subhead": "Geiranger → Trollstigen",
       "transition": "fly",
       "camera": {
         "center": [
@@ -62,7 +61,7 @@
         "zoom": 8.1,
         "pitch": 40,
         "bearing": 0,
-        "transitionMs": 3400
+        "transitionMs": 2400
       },
       "cues": [
         {
@@ -75,28 +74,10 @@
       ]
     },
     {
-      "id": "route-start",
-      "type": "map",
-      "durationMs": 2500,
-      "headline": "Start on Route 63",
-      "transition": "fly",
-      "camera": {
-        "center": [
-          7.39287,
-          62.01408
-        ],
-        "zoom": 10.6,
-        "pitch": 45,
-        "bearing": 0,
-        "transitionMs": 2000
-      }
-    },
-    {
       "id": "drive-to-flydalsjuvet",
       "type": "map",
-      "durationMs": 4000,
-      "headline": "To Flydalsjuvet",
-      "caption": "Geiranger–Trollstigen · Route 63",
+      "durationMs": 3500,
+      "headline": "Climb above Geiranger",
       "routeLayerId": "norway-camper-route",
       "routeFollow": {
         "samples": 5,
@@ -109,10 +90,9 @@
     {
       "id": "flydalsjuvet-stop",
       "type": "map",
-      "durationMs": 4500,
+      "durationMs": 3000,
       "sourceStoryChapterId": "flydalsjuvet",
       "headline": "Flydalsjuvet",
-      "caption": "Photo: Sundgot / CC BY-SA 4.0",
       "transition": "fly",
       "camera": {
         "center": [
@@ -128,9 +108,8 @@
     {
       "id": "drive-to-ornesvingen",
       "type": "map",
-      "durationMs": 3000,
-      "headline": "To Ørnesvingen",
-      "caption": "Geiranger–Trollstigen · Route 63",
+      "durationMs": 2500,
+      "headline": "Follow Route 63",
       "routeLayerId": "norway-camper-route",
       "routeFollow": {
         "samples": 4,
@@ -143,10 +122,9 @@
     {
       "id": "ornesvingen-stop",
       "type": "map",
-      "durationMs": 4500,
+      "durationMs": 3000,
       "sourceStoryChapterId": "ornesvingen",
       "headline": "Ørnesvingen",
-      "caption": "Photo: Ximonic, Simo Räsänen / CC BY 2.5",
       "transition": "fly",
       "camera": {
         "center": [
@@ -162,9 +140,8 @@
     {
       "id": "drive-to-gudbrandsjuvet",
       "type": "map",
-      "durationMs": 7000,
-      "headline": "To Gudbrandsjuvet",
-      "caption": "Geiranger–Trollstigen · Route 63",
+      "durationMs": 5500,
+      "headline": "North through Valldal",
       "routeLayerId": "norway-camper-route",
       "routeFollow": {
         "samples": 9,
@@ -177,10 +154,9 @@
     {
       "id": "gudbrandsjuvet-stop",
       "type": "map",
-      "durationMs": 4500,
+      "durationMs": 3000,
       "sourceStoryChapterId": "gudbrandsjuvet",
       "headline": "Gudbrandsjuvet",
-      "caption": "Photo: GuoJunjun / CC BY-SA 3.0 NO",
       "transition": "fly",
       "camera": {
         "center": [
@@ -196,9 +172,8 @@
     {
       "id": "drive-to-trollstigen",
       "type": "map",
-      "durationMs": 8000,
-      "headline": "To Trollstigen",
-      "caption": "Geiranger–Trollstigen · Route 63",
+      "durationMs": 6500,
+      "headline": "Into the mountains",
       "routeLayerId": "norway-camper-route",
       "routeFollow": {
         "samples": 10,
@@ -211,10 +186,9 @@
     {
       "id": "trollstigen-stop",
       "type": "map",
-      "durationMs": 5000,
+      "durationMs": 3500,
       "sourceStoryChapterId": "trollstigen",
       "headline": "Trollstigen",
-      "caption": "Photo: Yair-haklai / CC BY-SA 4.0",
       "transition": "fly",
       "camera": {
         "center": [
@@ -231,8 +205,8 @@
       "id": "outro",
       "type": "cta",
       "durationMs": 3000,
-      "headline": "Save the route",
-      "subhead": "Open the interactive GeoLibre project for the full map.",
+      "headline": "Geiranger → Trollstigen",
+      "subhead": "104 km · one unforgettable road",
       "transition": "fly",
       "camera": {
         "center": [
@@ -242,9 +216,8 @@
         "zoom": 8.2,
         "pitch": 40,
         "bearing": 0,
-        "transitionMs": 2200
-      },
-      "caption": "Geiranger–Trollstigen · Norway"
+        "transitionMs": 1800
+      }
     }
   ],
   "audio": {
