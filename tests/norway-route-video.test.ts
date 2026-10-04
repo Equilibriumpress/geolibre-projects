@@ -34,7 +34,7 @@ describe("Norway scenic camper route project", () => {
     assert.equal(story.fps, 30);
     assert.equal(
       story.scenes.reduce((sum: number, scene: { durationMs: number }) => sum + scene.durationMs, 0),
-      55_000,
+      41_500,
     );
 
     const routeScene = story.scenes.find((scene: { routeLayerId?: string }) => scene.routeLayerId);
@@ -59,6 +59,10 @@ describe("Norway scenic camper route project", () => {
       (scene: { sourceStoryChapterId?: string }) => Boolean(scene.sourceStoryChapterId),
     );
     assert.equal(photoStops.length, 4);
+    assert.equal(story.scenes.length, 12);
+    assert.ok(story.scenes.every((scene: { caption?: string }) => !scene.caption));
+    assert.equal(story.output.showSafeArea, false);
+    assert.equal(story.output.includeBranding, false);
     const chapterIds = new Set(chapters.map((chapter: { id: string }) => chapter.id));
     assert.ok(photoStops.every((scene: { sourceStoryChapterId: string }) => chapterIds.has(scene.sourceStoryChapterId)));
 
