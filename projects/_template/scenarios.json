@@ -1,0 +1,13 @@
+{
+  "defaultScenario": "balanced",
+  "scenarios": [
+    {
+      "id": "balanced",
+      "title": "Balanced",
+      "description": "Starter scenario. Replace the example weight with real indicators.",
+      "weights": {
+        "example-indicator": 1
+      }
+    }
+  ]
+}

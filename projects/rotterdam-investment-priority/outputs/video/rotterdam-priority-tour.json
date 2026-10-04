@@ -1,0 +1,62 @@
+{
+  "type": "geolibre-tour",
+  "version": 2,
+  "fps": 30,
+  "keyframes": [
+    {
+      "center": [
+        4.49,
+        51.925
+      ],
+      "zoom": 10.7,
+      "pitch": 0,
+      "bearing": 0,
+      "holdMs": 1200,
+      "transitionMs": 3000
+    },
+    {
+      "center": [
+        4.4795,
+        51.9225
+      ],
+      "zoom": 13.1,
+      "pitch": 35,
+      "bearing": -12,
+      "holdMs": 900,
+      "transitionMs": 2800
+    },
+    {
+      "center": [
+        4.496,
+        51.889
+      ],
+      "zoom": 12.4,
+      "pitch": 40,
+      "bearing": 15,
+      "holdMs": 900,
+      "transitionMs": 2800
+    },
+    {
+      "center": [
+        4.43,
+        51.919
+      ],
+      "zoom": 12,
+      "pitch": 30,
+      "bearing": -25,
+      "holdMs": 900,
+      "transitionMs": 2800
+    },
+    {
+      "center": [
+        4.49,
+        51.918
+      ],
+      "zoom": 11.3,
+      "pitch": 20,
+      "bearing": 0,
+      "holdMs": 1400,
+      "transitionMs": 2000
+    }
+  ]
+}

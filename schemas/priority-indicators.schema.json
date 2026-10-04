@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://equilibriumpress.github.io/GeoLibre/schemas/priority-indicators.schema.json",
+  "title": "Investment Priority Lab indicators",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "analysisUnit",
+    "indicators"
+  ],
+  "properties": {
+    "analysisUnit": {
+      "type": "string",
+      "minLength": 2
+    },
+    "analysisYear": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "indicators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "direction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 2
+          },
+          "description": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "numeratorField": {
+            "type": "string"
+          },
+          "denominatorField": {
+            "type": "string"
+          },
+          "multiplier": {
+            "type": "number"
+          },
+          "direction": {
+            "enum": [
+              "higher-is-worse",
+              "lower-is-worse"
+            ]
+          },
+          "minValid": {
+            "type": "number"
+          },
+          "maxValid": {
+            "type": "number"
+          },
+          "quality": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "field"
+              ]
+            },
+            "then": {},
+            "else": {
+              "required": [
+                "numeratorField",
+                "denominatorField"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "defaultScenario": "balanced-investment",
+  "scenarios": [
+    {
+      "id": "balanced-investment",
+      "title": "Balanced investment",
+      "description": "Balances population pressure, ageing, income, social security and access to daily services.",
+      "weights": {
+        "population-pressure": 0.2,
+        "older-share": 0.15,
+        "low-income": 0.2,
+        "benefit-share": 0.15,
+        "gp-distance": 0.1,
+        "supermarket-distance": 0.1,
+        "primary-school-distance": 0.1
+      }
+    },
+    {
+      "id": "healthy-ageing",
+      "title": "Healthy ageing",
+      "description": "Prioritises older residents, access to primary care and daily necessities, and socioeconomic vulnerability.",
+      "weights": {
+        "older-share": 0.35,
+        "gp-distance": 0.25,
+        "low-income": 0.15,
+        "benefit-share": 0.15,
+        "supermarket-distance": 0.1
+      }
+    },
+    {
+      "id": "family-access",
+      "title": "Family access",
+      "description": "Prioritises children, school access, single-parent households, low income and access to daily groceries.",
+      "weights": {
+        "child-share": 0.3,
+        "primary-school-distance": 0.25,
+        "low-income": 0.2,
+        "single-parent-share": 0.15,
+        "supermarket-distance": 0.1
+      }
+    },
+    {
+      "id": "social-vulnerability",
+      "title": "Social vulnerability",
+      "description": "Emphasises low income, benefit dependency, single-parent households and low average household income.",
+      "weights": {
+        "low-income": 0.3,
+        "benefit-share": 0.25,
+        "single-parent-share": 0.2,
+        "household-income": 0.15,
+        "gp-distance": 0.1
+      }
+    },
+    {
+      "id": "service-pressure",
+      "title": "Service pressure",
+      "description": "Emphasises population pressure and distance to health, food, school and rail services.",
+      "weights": {
+        "population-pressure": 0.3,
+        "gp-distance": 0.2,
+        "supermarket-distance": 0.2,
+        "primary-school-distance": 0.15,
+        "train-distance": 0.15
+      }
+    }
+  ]
+}

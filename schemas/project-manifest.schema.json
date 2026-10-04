@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://equilibriumpress.github.io/GeoLibre/schemas/project-manifest.schema.json",
+  "title": "Repository GeoLibre project manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "status",
+    "created",
+    "topics",
+    "project",
+    "analysis",
+    "sources",
+    "dataPolicy",
+    "outputs"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "published",
+        "archived"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "project": {
+      "const": "project.geolibre"
+    },
+    "analysis": {
+      "const": "analysis.sql"
+    },
+    "sources": {
+      "const": "sources.json"
+    },
+    "dataPolicy": {
+      "enum": [
+        "remote-first",
+        "snapshot",
+        "mixed"
+      ]
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "interactive-map",
+          "viewer",
+          "dashboard",
+          "storymap",
+          "print-layout",
+          "atlas",
+          "dataset",
+          "standalone-html",
+          "video"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "outputRegistry": {
+      "const": "outputs.json"
+    },
+    "videoStory": {
+      "const": "video-story.json"
+    },
+    "question": {
+      "type": "string"
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "analysisYear": {
+      "type": "integer",
+      "minimum": 1900
+    }
+  }
+}

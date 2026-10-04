@@ -1,0 +1,41 @@
+{
+  "id": "rotterdam-investment-priority",
+  "title": "Rotterdam Investment Priority Lab",
+  "summary": "Compares policy investment priorities across Rotterdam's urban core on the official CBS 500 metre statistical grid.",
+  "status": "published",
+  "location": "Rotterdam, Netherlands",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "investment-priority",
+    "scenario-analysis",
+    "demography",
+    "income",
+    "accessibility",
+    "social-policy"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map",
+    "viewer",
+    "dashboard",
+    "storymap",
+    "print-layout",
+    "atlas",
+    "dataset",
+    "standalone-html",
+    "video"
+  ],
+  "outputRegistry": "outputs.json",
+  "videoStory": "video-story.json",
+  "question": "Which Rotterdam grid cells remain high priorities across different public-investment perspectives?",
+  "interpretation": "Compare five policy scenarios on the official CBS 500 metre grid. Scores are relative to the loaded urban-core extent. Confidence describes available weighted data separately from priority.",
+  "limitations": [
+    "Scenario weights express policy choices, not an objectively correct funding ranking.",
+    "The pilot covers the urban core, not the whole municipality."
+  ],
+  "analysisYear": 2024
+}

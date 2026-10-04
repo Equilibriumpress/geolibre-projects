@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "title": "Project video story",
+  "preset": "tiktok",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "title",
+      "durationMs": 2000,
+      "headline": "Start with one strong question",
+      "transition": "cut",
+      "caption": "One clear hook",
+      "narration": "State the question the viewer will see answered."
+    },
+    {
+      "id": "map",
+      "type": "map",
+      "durationMs": 5000,
+      "sourceStoryChapterId": "overview",
+      "transition": "fly"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "durationMs": 3000,
+      "headline": "Explore the full analysis",
+      "transition": "fade",
+      "caption": "Explore the full analysis"
+    }
+  ],
+  "audio": {
+    "music": "",
+    "musicVolume": 0.15,
+    "narrationVolume": 1
+  }
+}

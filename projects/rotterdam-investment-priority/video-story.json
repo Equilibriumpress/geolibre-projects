@@ -1,0 +1,148 @@
+{
+  "version": "0.1.0",
+  "title": "Where should Rotterdam invest first?",
+  "preset": "tiktok",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "title",
+      "durationMs": 2000,
+      "headline": "Where should Rotterdam invest first?",
+      "subhead": "11 indicators · 5 policy scenarios",
+      "transition": "cut",
+      "caption": "Where should Rotterdam invest first?",
+      "narration": "If Rotterdam could prioritise one place next, where would investment have the greatest combined need?",
+      "audioCue": "hook-hit"
+    },
+    {
+      "id": "city-overview",
+      "type": "map",
+      "durationMs": 4000,
+      "headline": "One city, very different priorities",
+      "sourceStoryChapterId": "overview",
+      "scenarioId": "balanced-investment",
+      "camera": {
+        "center": [
+          4.49,
+          51.925
+        ],
+        "zoom": 10.7,
+        "pitch": 0,
+        "bearing": 0,
+        "transitionMs": 2200
+      },
+      "transition": "fly",
+      "caption": "11 indicators. One comparable grid.",
+      "narration": "The model compares demographic pressure, income, social vulnerability and access to daily services on the same five-hundred-metre grid."
+    },
+    {
+      "id": "priority-cells",
+      "type": "highlight",
+      "durationMs": 4000,
+      "headline": "The highest-priority cells emerge",
+      "layerId": "investment-priority-lab-results",
+      "field": "priority_score",
+      "scenarioId": "balanced-investment",
+      "camera": {
+        "center": [
+          4.4795,
+          51.9225
+        ],
+        "zoom": 12.5,
+        "pitch": 30,
+        "bearing": -12,
+        "transitionMs": 1800
+      },
+      "transition": "fly",
+      "threshold": 80,
+      "caption": "High-priority cells emerge",
+      "narration": "Under the balanced scenario, several cells rise because multiple pressures overlap rather than because of one single indicator.",
+      "audioCue": "map-rise"
+    },
+    {
+      "id": "top-ten",
+      "type": "kpi",
+      "durationMs": 4000,
+      "headline": "How high does priority get?",
+      "widgetId": "kpi-max-priority",
+      "field": "priority_score",
+      "scenarioId": "balanced-investment",
+      "transition": "fade",
+      "caption": "Priority is relative, not absolute",
+      "narration": "The score ranks cells against the rest of this study area, and confidence remains separate from priority."
+    },
+    {
+      "id": "healthy-ageing",
+      "type": "comparison",
+      "durationMs": 4000,
+      "headline": "Healthy ageing changes the map",
+      "scenarioId": "healthy-ageing",
+      "sourceStoryChapterId": "south",
+      "camera": {
+        "center": [
+          4.496,
+          51.889
+        ],
+        "zoom": 12.1,
+        "pitch": 34,
+        "bearing": 10,
+        "transitionMs": 1600
+      },
+      "transition": "fly",
+      "caption": "Change the question, change the map",
+      "narration": "When healthy ageing gets more weight, older residents, primary care and daily necessities reshape the ranking.",
+      "audioCue": "scenario-switch"
+    },
+    {
+      "id": "social-vulnerability",
+      "type": "chart",
+      "durationMs": 4000,
+      "headline": "Social vulnerability shifts priorities again",
+      "widgetId": "scatter-confidence",
+      "scenarioId": "social-vulnerability",
+      "transition": "fade",
+      "caption": "Social vulnerability shifts it again",
+      "narration": "A social-vulnerability lens gives more weight to low income, benefits and single-parent households."
+    },
+    {
+      "id": "consensus",
+      "type": "map",
+      "durationMs": 5000,
+      "headline": "But some places stay important in every scenario",
+      "viewMode": "consensus",
+      "sourceStoryChapterId": "consensus",
+      "camera": {
+        "center": [
+          4.49,
+          51.918
+        ],
+        "zoom": 11.3,
+        "pitch": 20,
+        "bearing": 0,
+        "transitionMs": 1800
+      },
+      "transition": "fly",
+      "caption": "Consensus reveals robust priorities",
+      "narration": "The strongest candidates are the places that remain important across several different policy choices.",
+      "audioCue": "consensus"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "durationMs": 3000,
+      "headline": "Explore the full Rotterdam analysis",
+      "subhead": "Map · dashboard · story · data · report",
+      "transition": "fade",
+      "caption": "Explore the full analysis",
+      "narration": "Open the interactive map, dashboard, story, data and method on the GeoLibre project page.",
+      "audioCue": "cta"
+    }
+  ],
+  "audio": {
+    "music": "optional-light-pulse",
+    "musicVolume": 0.14,
+    "narrationVolume": 1
+  }
+}

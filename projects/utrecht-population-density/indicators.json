@@ -1,0 +1,17 @@
+{
+  "analysisUnit": "CBS neighbourhoods",
+  "analysisYear": 2025,
+  "indicators": [
+    {
+      "id": "population-density",
+      "title": "Population density",
+      "description": "Residents per square kilometre.",
+      "field": "bevolkingsdichtheid_inwoners_per_km2",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2025,
+      "unit": "residents/km²"
+    }
+  ]
+}

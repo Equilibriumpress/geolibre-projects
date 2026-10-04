@@ -1,0 +1,76 @@
+{
+  "id": "rotterdam-output-benchmark",
+  "project": "../../project.geolibre",
+  "sourceLayer": "cbs-grid-rotterdam-2024",
+  "resultLayer": "investment-priority-lab-results",
+  "outputs": [
+    {
+      "id": "interactive-map",
+      "status": "configured",
+      "entry": "workspace/viewer/map-only URLs",
+      "features": [
+        "workspace",
+        "viewer",
+        "map-only",
+        "legend",
+        "identify popup",
+        "priority quick filter",
+        "confidence quick filter"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "status": "configured",
+      "widgets": 14
+    },
+    {
+      "id": "storymap",
+      "status": "configured",
+      "chapters": 5
+    },
+    {
+      "id": "png",
+      "status": "runtime-export",
+      "via": "Print Layout"
+    },
+    {
+      "id": "pdf",
+      "status": "runtime-export",
+      "via": "Print Layout"
+    },
+    {
+      "id": "atlas",
+      "status": "runtime-export",
+      "via": "Print Layout atlas",
+      "filter": "priority_score >= 80"
+    },
+    {
+      "id": "data",
+      "status": "runtime-export",
+      "formats": [
+        "geojson",
+        "csv",
+        "kml",
+        "kmz",
+        "geoparquet",
+        "geopackage",
+        "shapefile"
+      ]
+    },
+    {
+      "id": "sql",
+      "status": "versioned",
+      "file": "../../analysis.sql"
+    },
+    {
+      "id": "video",
+      "status": "runtime-export",
+      "setup": "video/rotterdam-priority-tour.json"
+    },
+    {
+      "id": "standalone-html",
+      "status": "published",
+      "file": "html/index.html"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "version": "0.1.0",
+  "name": "Utrecht · Globe to Overvecht 3D showcase",
+  "mapView": {
+    "center": [
+      5.10964,
+      52.12054
+    ],
+    "zoom": 14,
+    "bearing": 24,
+    "pitch": 68
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/positron",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "primaryRenderer": "cesium",
+  "layers": [
+    {
+      "id": "cbs-utrecht-buurten-2025",
+      "name": "CBS neighbourhoods 2025 - Utrecht",
+      "type": "geojson",
+      "source": {
+        "type": "geojson",
+        "url": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json&bbox=5.00,52.00,5.25,52.17&limit=1000&filter=gemeentecode%20%3D%20%27GM0344%27&filter-lang=cql2-text"
+      },
+      "sourcePath": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json&bbox=5.00,52.00,5.25,52.17&limit=1000&filter=gemeentecode%20%3D%20%27GM0344%27&filter-lang=cql2-text",
+      "visible": false,
+      "opacity": 0.82,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#ef4444",
+        "strokeColor": "#7f1d1d",
+        "strokeWidth": 1,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 0.52,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "maplibre-gl-vector",
+        "externalNativeLayer": true,
+        "controlOwnsPaint": true,
+        "identifiable": true,
+        "nativeLayerIds": [],
+        "sourceIds": [],
+        "panelCollapsed": true,
+        "vectorSource": "url",
+        "vectorState": {
+          "format": "geojson",
+          "ingestMode": "table",
+          "picker": false,
+          "renderMode": "geojson",
+          "style": {
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.45,
+            "lineColor": "#1e40af",
+            "lineWidth": 1
+          }
+        },
+        "publisher": "CBS via PDOK",
+        "year": 2025,
+        "license": "CC BY 4.0"
+      },
+      "filterExpression": [
+        "==",
+        [
+          "get",
+          "gemeentecode"
+        ],
+        "GM0344"
+      ],
+      "quickFilters": [
+        {
+          "id": "utrecht-municipality",
+          "field": "gemeentecode",
+          "kind": "categorical",
+          "values": [
+            "GM0344"
+          ]
+        }
+      ],
+      "popup": {
+        "click": true,
+        "hover": true,
+        "titleField": "buurtnaam",
+        "showFeatureId": false,
+        "fields": [
+          {
+            "field": "buurtcode",
+            "label": "Neighbourhood code"
+          },
+          {
+            "field": "aantal_inwoners",
+            "label": "Residents",
+            "kind": "number",
+            "format": {
+              "thousands": true
+            }
+          },
+          {
+            "field": "percentage_personen_65_jaar_en_ouder",
+            "label": "Aged 65+",
+            "kind": "number",
+            "format": {
+              "decimals": 0,
+              "suffix": "%"
+            },
+            "hover": true
+          },
+          {
+            "field": "bevolkingsdichtheid_inwoners_per_km2",
+            "label": "Population density",
+            "kind": "number",
+            "format": {
+              "thousands": true,
+              "suffix": " / km²"
+            },
+            "hover": true
+          }
+        ]
+      },
+      "capabilities": {
+        "query": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "export": true
+      }
+    },
+    {
+      "id": "3dbag-netherlands-lod22",
+      "name": "3DBAG Netherlands · LoD 2.2",
+      "type": "3d-tiles",
+      "source": {
+        "type": "3d-tiles",
+        "url": "https://data.3dbag.nl/v20250903/cesium3dtiles/lod22/tileset.json",
+        "sourceId": "3dbag-netherlands-lod22",
+        "altitudeOffset": -43,
+        "attribution": "© 3DBAG by tudelft3d and 3DGI"
+      },
+      "sourcePath": "https://data.3dbag.nl/v20250903/cesium3dtiles/lod22/tileset.json",
+      "visible": false,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#ef4444",
+        "strokeColor": "#7f1d1d",
+        "strokeWidth": 1,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 1,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "3d-tiles-url",
+        "externalNativeLayer": true,
+        "identifiable": false,
+        "customLayerType": "3d-tiles",
+        "sourceId": "3dbag-netherlands-lod22",
+        "nativeLayerIds": [
+          "3dbag-netherlands-lod22"
+        ],
+        "layerName": "3DBAG Netherlands · LoD 2.2",
+        "altitudeOffset": -43,
+        "panelCollapsed": true,
+        "publisher": "3DBAG by tudelft3d and 3DGI",
+        "license": "CC BY 4.0",
+        "version": "v2025.09.03"
+      }
+    }
+  ],
+  "styles": {},
+  "interaction": {
+    "identify": [
+      "cbs-utrecht-buurten-2025"
+    ],
+    "controls": {
+      "search": false,
+      "scale": true,
+      "attribution": true
+    }
+  },
+  "metadata": {
+    "repositoryProject": true,
+    "projectId": "utrecht-65plus-density",
+    "showcase": "globe-netherlands-utrecht-3d-overvecht-data",
+    "provenance": "sources.json",
+    "note": "Dedicated Cesium workspace for the Globe → Netherlands → Utrecht → 3D buildings → Overvecht → data layer visual story."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://equilibriumpress.github.io/GeoLibre/schemas/sources.schema.json",
+  "title": "Repository GeoLibre data provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sources"],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "publisher",
+          "url",
+          "retrieved",
+          "role"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "publisher": {"type": "string"},
+          "url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "retrieved": {
+            "type": "string",
+            "format": "date"
+          },
+          "license": {"type": "string"},
+          "role": {"type": "string"},
+          "snapshot": {"type": ["string", "null"]},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

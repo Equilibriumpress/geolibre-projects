@@ -1,0 +1,16 @@
+{
+  "name": "geolibre-projects",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "projects:validate": "node scripts/validate-projects.mjs",
+    "projects:contracts": "node scripts/check-project-contracts.mjs",
+    "projects:catalog": "node scripts/build-project-catalog.mjs",
+    "projects:routes": "python3 scripts/check-project-routes.py",
+    "projects:url": "node scripts/project-url.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.17.1"
+  }
+}

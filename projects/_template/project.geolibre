@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "name": "Project title",
+  "mapView": {
+    "center": [0, 0],
+    "zoom": 2,
+    "bearing": 0,
+    "pitch": 0
+  },
+  "basemapStyleUrl": "",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "layers": [],
+  "styles": {},
+  "metadata": {
+    "repositoryProject": true
+  }
+}

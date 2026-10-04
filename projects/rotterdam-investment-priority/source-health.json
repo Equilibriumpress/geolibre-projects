@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-04T08:23:46.060378+00:00",
+  "scope": "Bounded HTTP sample. Browser CORS and renderer readiness require runtime checks.",
+  "fallbackPolicy": "Never substitute stale data silently. Geometry preview, method and SQL remain available if a live source fails.",
+  "sources": [
+    {
+      "id": "cbs-grid-500m-pdok-2024",
+      "url": "https://api.pdok.nl/cbs/vierkantstatistieken500m/ogc/v1/collections/vierkant500/items?f=json",
+      "status": 200,
+      "sampleBytes": 65536,
+      "corsAllowOrigin": "*",
+      "elapsedMs": 8053,
+      "error": null
+    },
+    {
+      "id": "cbs-product-information-grid-2024",
+      "url": "https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024",
+      "status": 200,
+      "sampleBytes": 48397,
+      "corsAllowOrigin": null,
+      "elapsedMs": 8080,
+      "error": null
+    },
+    {
+      "id": "cbs-grid-download-page",
+      "url": "https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/kaart-van-500-meter-bij-500-meter-met-statistieken",
+      "status": 200,
+      "sampleBytes": 47649,
+      "corsAllowOrigin": null,
+      "elapsedMs": 8433,
+      "error": null
+    }
+  ]
+}

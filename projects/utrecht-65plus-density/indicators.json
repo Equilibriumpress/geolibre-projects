@@ -1,0 +1,29 @@
+{
+  "analysisUnit": "CBS neighbourhoods",
+  "analysisYear": 2025,
+  "indicators": [
+    {
+      "id": "population-density",
+      "title": "Population density",
+      "description": "Residents per square kilometre.",
+      "field": "bevolkingsdichtheid_inwoners_per_km2",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": 2025,
+      "unit": "residents/km²"
+    },
+    {
+      "id": "older-share",
+      "title": "Residents aged 65+",
+      "description": "Share of residents aged 65 years or older.",
+      "field": "percentage_personen_65_jaar_en_ouder",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "maxValid": 100,
+      "quality": 1,
+      "year": 2025,
+      "unit": "%"
+    }
+  ]
+}

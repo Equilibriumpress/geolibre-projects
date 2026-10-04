@@ -1,0 +1,157 @@
+{
+  "featured": "map",
+  "outputs": [
+    {
+      "id": "map",
+      "title": "Interactive map",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "description": "Open the read-only interactive priority map.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "kind": "dashboard",
+      "mode": "deep-link",
+      "output": "dashboard",
+      "description": "Explore KPIs, distributions and scenario results.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "story",
+      "title": "Story",
+      "kind": "story",
+      "mode": "deep-link",
+      "output": "story",
+      "description": "Read the five-part spatial narrative.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "map-only",
+      "title": "Map only",
+      "kind": "embed",
+      "mode": "deep-link",
+      "output": "maponly",
+      "description": "Minimal map for embedding.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "print",
+      "title": "PNG / PDF",
+      "kind": "print",
+      "mode": "deep-link",
+      "output": "print",
+      "description": "Open the configured print layout and export PNG or PDF.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "atlas",
+      "title": "Atlas",
+      "kind": "atlas",
+      "mode": "deep-link",
+      "output": "atlas",
+      "description": "Generate a map series for high-priority cells.",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "data",
+      "title": "Data exports",
+      "kind": "data",
+      "mode": "deep-link",
+      "output": "data",
+      "formats": [
+        "geojson",
+        "csv",
+        "kml",
+        "kmz",
+        "geoparquet",
+        "geopackage",
+        "shapefile"
+      ],
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "analysis",
+      "title": "Analysis & SQL",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    },
+    {
+      "id": "standalone-html",
+      "title": "Standalone HTML",
+      "kind": "html",
+      "mode": "published",
+      "path": "outputs/html/index.html",
+      "publicPath": "outputs/rotterdam/",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    },
+    {
+      "id": "video",
+      "title": "Video",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "description": "Preview and export the versioned analysis video as TikTok, Reel, YouTube Short or 16:9 explainer from one timeline.",
+      "path": "video-story.json",
+      "primary": false,
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    }
+  ]
+}

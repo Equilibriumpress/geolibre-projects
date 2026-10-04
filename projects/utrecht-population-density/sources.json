@@ -1,0 +1,26 @@
+{
+  "sources": [
+    {
+      "id": "cbs-pdok-neighbourhoods-2025",
+      "name": "CBS Wijken en Buurten 2025 - Buurten",
+      "publisher": "Centraal Bureau voor de Statistiek via PDOK",
+      "url": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json",
+      "retrieved": "2026-10-04",
+      "license": "CC BY 4.0",
+      "role": "Neighbourhood geometry and 2025 attributes including population density and share aged 65+.",
+      "snapshot": null,
+      "notes": "The GeoLibre project opens a bbox-limited OGC API Features response and filters features to municipality code GM0344."
+    },
+    {
+      "id": "cbs-kwb-2025",
+      "name": "Kerncijfers wijken en buurten 2025",
+      "publisher": "Centraal Bureau voor de Statistiek",
+      "url": "https://www.cbs.nl/nl-nl/cijfers/detail/86165ned",
+      "retrieved": "2026-10-04",
+      "license": "CBS open data terms",
+      "role": "Variable definitions and statistical context for the neighbourhood indicators.",
+      "snapshot": null,
+      "notes": "Used to document and cross-check the meaning of the 2025 neighbourhood variables."
+    }
+  ]
+}

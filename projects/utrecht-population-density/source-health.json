@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-04T08:23:46.060378+00:00",
+  "scope": "Bounded HTTP sample. Browser CORS and renderer readiness require runtime checks.",
+  "fallbackPolicy": "Never substitute stale data silently. Geometry preview, method and SQL remain available if a live source fails.",
+  "sources": [
+    {
+      "id": "cbs-pdok-neighbourhoods-2025",
+      "url": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1/collections/buurten/items?f=json",
+      "status": 200,
+      "sampleBytes": 65536,
+      "corsAllowOrigin": "*",
+      "elapsedMs": 6647,
+      "error": null
+    },
+    {
+      "id": "cbs-kwb-2025",
+      "url": "https://www.cbs.nl/nl-nl/cijfers/detail/86165ned",
+      "status": 200,
+      "sampleBytes": 65536,
+      "corsAllowOrigin": null,
+      "elapsedMs": 9633,
+      "error": null
+    }
+  ]
+}

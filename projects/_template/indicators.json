@@ -1,0 +1,17 @@
+{
+  "analysisUnit": "replace-me",
+  "analysisYear": null,
+  "indicators": [
+    {
+      "id": "example-indicator",
+      "title": "Example indicator",
+      "description": "Replace with a documented input variable.",
+      "field": "example_field",
+      "direction": "higher-is-worse",
+      "minValid": 0,
+      "quality": 1,
+      "year": null,
+      "unit": ""
+    }
+  ]
+}

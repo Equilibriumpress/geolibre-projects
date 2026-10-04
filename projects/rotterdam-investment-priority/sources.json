@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "cbs-grid-500m-pdok-2024",
+      "name": "CBS Vierkantstatistieken 500m",
+      "publisher": "Centraal Bureau voor de Statistiek via PDOK",
+      "url": "https://api.pdok.nl/cbs/vierkantstatistieken500m/ogc/v1/collections/vierkant500/items?f=json",
+      "retrieved": "2026-10-04",
+      "license": "CC BY 4.0",
+      "role": "500 x 500 metre geometry and 2024 demographic, income, social-security and service-access indicators.",
+      "snapshot": null,
+      "notes": "The project requests a Rotterdam urban-core bounding box and server-side CQL2 filter jaarcode = 2024."
+    },
+    {
+      "id": "cbs-product-information-grid-2024",
+      "name": "Statistische gegevens per vierkant en postcode 2022-2023-2024",
+      "publisher": "Centraal Bureau voor de Statistiek",
+      "url": "https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024",
+      "retrieved": "2026-10-04",
+      "license": "CBS reuse conditions",
+      "role": "Definitions, methodology and publication context for the statistical grid variables.",
+      "snapshot": null,
+      "notes": "CBS publishes counts, income, social-security and proximity indicators on the 500 metre grid."
+    },
+    {
+      "id": "cbs-grid-download-page",
+      "name": "Kaart van 500 meter bij 500 meter met statistieken",
+      "publisher": "Centraal Bureau voor de Statistiek",
+      "url": "https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/kaart-van-500-meter-bij-500-meter-met-statistieken",
+      "retrieved": "2026-10-04",
+      "license": "CBS reuse conditions",
+      "role": "Current release status and errata for the 2024 grid publication.",
+      "snapshot": null,
+      "notes": "CBS reports that the 2024 proximity-data publication issue was corrected on 28 August 2026."
+    }
+  ]
+}

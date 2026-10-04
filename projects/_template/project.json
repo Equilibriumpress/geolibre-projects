@@ -1,0 +1,23 @@
+{
+  "id": "replace-me",
+  "title": "Project title",
+  "summary": "One-sentence description of the spatial research question.",
+  "status": "draft",
+  "location": "",
+  "created": "YYYY-MM-DD",
+  "updated": "YYYY-MM-DD",
+  "topics": [],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map"
+  ],
+  "question": "Which concrete spatial question should this project answer?",
+  "interpretation": "Explain the result without inventing a finding.",
+  "limitations": [
+    "Describe limits of data and method."
+  ],
+  "analysisYear": null
+}

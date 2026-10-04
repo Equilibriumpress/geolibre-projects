@@ -1,0 +1,94 @@
+site_name: GeoLibre
+site_description: Public spatial research projects. Create with ChatGPT, keep sources and analysis in GitHub, and explore maps, dashboards and video in your browser.
+site_url: https://equilibriumpress.github.io/geolibre-projects
+repo_name: Equilibriumpress/geolibre-projects
+repo_url: https://github.com/Equilibriumpress/geolibre-projects
+edit_uri: edit/main/docs/
+# Output directory, set explicitly so the build target stays pinned to `site/`
+# (matching the Pages upload paths) rather than relying on the tool's
+# default, which a Zensical 0.0.x patch could shift.
+site_dir: site
+
+theme:
+  name: material
+  logo: assets/geolibre-icon.png
+  favicon: assets/geolibre-icon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Projects: projects.md
+  - Create with ChatGPT: workflow.md
+  - Help: project-help.md
+  - Documentation: documentation.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/research-portal.js
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  # Google Analytics for geolibre.app, configured entirely from the environment
+  # so the tracker only loads where a measurement ID is set: the production
+  # Pages deploy. A local `zensical build`, a fork, and a PR preview leave these
+  # unset and ship no tracker, which is also why the ID is not hard-coded here.
+  #
+  # `provider` is a second variable because the theme keys the whole integration
+  # off it: with a provider and a blank property it would still load gtag.js,
+  # pointed at nothing. .github/workflows/pages.yml derives it from
+  # GEOLIBRE_GA_MEASUREMENT_ID, so an operator only ever sets that one value.
+  analytics:
+    provider: !ENV [GEOLIBRE_ANALYTICS_PROVIDER, ""]
+    property: !ENV [GEOLIBRE_GA_MEASUREMENT_ID, ""]
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Equilibriumpress/geolibre-projects
+      name: GeoLibre fork on GitHub
+    - icon: fontawesome/solid/heart
+      link: https://github.com/sponsors/giswqs
+      name: Sponsor GeoLibre on GitHub
+    - icon: fontawesome/solid/mug-hot
+      link: https://buymeacoffee.com/giswqs
+      name: Buy the maintainer a coffee

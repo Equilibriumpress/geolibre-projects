@@ -1,0 +1,31 @@
+{
+  "id": "utrecht-population-density",
+  "title": "Population density in Utrecht",
+  "summary": "Compare residents per square kilometre across Utrecht neighbourhoods using one transparent indicator.",
+  "status": "published",
+  "location": "Utrecht, Netherlands",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "population",
+    "density",
+    "neighbourhoods"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map",
+    "dashboard",
+    "dataset"
+  ],
+  "outputRegistry": "outputs.json",
+  "question": "Which Utrecht neighbourhoods have the highest population density?",
+  "analysisYear": 2025,
+  "interpretation": "The map ranks population density within Utrecht. A score of 100 identifies the highest density, not a judgement of social need. Selection shows the original residents/km² value.",
+  "limitations": [
+    "Neighbourhood boundaries aggregate different land uses. A neighbourhood average does not describe every street.",
+    "The project reads live CBS/PDOK data. Later source revisions can change the ranks."
+  ]
+}
