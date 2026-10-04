@@ -1,0 +1,31 @@
+import { readFile, writeFile } from "node:fs/promises";
+const slug = process.argv[2];
+if (!/^[a-z0-9-]+$/.test(slug || "")) throw new Error("Specify project slug");
+const project = JSON.parse(await readFile(`projects/${slug}/project.geolibre`, "utf8"));
+const config = project.plugins.settings["investment-priority-lab"];
+const layer = project.layers.find(layer => layer.id === config.sourceLayerId);
+const scenario = config.scenarios.find(s => s.id === config.activeScenarioId);
+const quote = name => '"' + name.replaceAll('"', '""') + '"';
+const field = name => `TRY_CAST(${quote(name)} AS DOUBLE)`;
+const weighted = config.indicators.filter(i => scenario.weights[i.id] > 0);
+const ctes = [`source AS (SELECT * FROM ST_Read('${layer.source.url.replaceAll("'", "''")}'))`];
+const expressions = weighted.map((i, n) => {
+  const value = i.field ? field(i.field) : `CASE WHEN ${field(i.denominatorField)} > 0 AND ${field(i.numeratorField)} >= 0 THEN ${field(i.numeratorField)} / ${field(i.denominatorField)} * ${i.multiplier ?? 1} END`;
+  const checks = [`(${value}) IS NOT NULL`];
+  if (i.minValid !== undefined) checks.push(`(${value}) >= ${i.minValid}`);
+  if (i.maxValid !== undefined) checks.push(`(${value}) <= ${i.maxValid}`);
+  return `CASE WHEN ${checks.join(" AND ")} THEN ${value} END AS value_${n}`;
+});
+ctes.push(`base AS (SELECT row_number() OVER () AS _row_id, *,\n  ${expressions.join(",\n  ")} FROM source)`);
+weighted.forEach((i,n) => {
+  const rank = `CASE WHEN count(*) OVER () = 1 THEN 50.0 ELSE 100.0 * (rank() OVER (ORDER BY value_${n}) - 1 + (count(*) OVER (PARTITION BY value_${n}) - 1) / 2.0) / (count(*) OVER () - 1) END`;
+  ctes.push(`rank_${n} AS (SELECT _row_id, ${i.direction === "lower-is-worse" ? `100.0 - (${rank})` : rank} AS score FROM base WHERE value_${n} IS NOT NULL)`);
+});
+const totalWeight = weighted.reduce((sum,i) => sum+scenario.weights[i.id],0);
+const sum = weighted.map((i,n) => `coalesce(r${n}.score * ${scenario.weights[i.id]}, 0)`).join(" + ");
+const available = weighted.map((i,n) => `CASE WHEN r${n}.score IS NOT NULL THEN ${scenario.weights[i.id]} ELSE 0 END`).join(" + ");
+const quality = weighted.map((i,n) => `CASE WHEN r${n}.score IS NOT NULL THEN ${scenario.weights[i.id] * Math.max(0, Math.min(1, i.quality ?? 1))} ELSE 0 END`).join(" + ");
+ctes.push(`result AS (SELECT b.*, round((${sum}) / nullif((${available}), 0), 1) AS priority_score, round(100.0 * (${quality}) / ${totalWeight}, 1) AS confidence FROM base b\n${weighted.map((i,n) => `LEFT JOIN rank_${n} r${n} USING (_row_id)`).join("\n")})`);
+const alias = slug === "utrecht-65plus-density" ? ", priority_score AS ageing_density_index" : "";
+const sql = `-- ${project.name}\n-- Generated from the published indicator definitions and default scenario: ${scenario.title}.\n-- Ties use average rank. A single valid observation scores 50.\n-- Invalid values stay missing. Available weights are renormalized, confidence uses all weights.\n-- Source query defines the geographic/year extent. Preserve geometry and raw fields.\nWITH\n${ctes.join(",\n")}\nSELECT *${alias} FROM result ORDER BY priority_score DESC NULLS LAST;\n`;
+await writeFile(`projects/${slug}/analysis.sql`, sql);

@@ -1,0 +1,27 @@
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import path from "node:path";
+import sharp from "sharp";
+const [slug, input] = process.argv.slice(2);
+if (!/^[a-z0-9-]+$/.test(slug || "") || !input) throw new Error("Usage: node scripts/build-project-preview.mjs <slug> <GeoJSON file>");
+const project = JSON.parse(await readFile(`projects/${slug}/project.json`, "utf8"));
+const data = JSON.parse(await readFile(input, "utf8"));
+const features = data.features.filter(f => f.geometry && (!f.properties.gemeentecode || f.properties.gemeentecode === "GM0344"));
+if (!features.length) throw new Error("No project features");
+const rings = features.flatMap(f => f.geometry.type === "Polygon" ? f.geometry.coordinates : f.geometry.type === "MultiPolygon" ? f.geometry.coordinates.flat() : []);
+const points = rings.flat();
+const lat = points.reduce((sum, p) => sum + p[1], 0) / points.length;
+const correction = Math.cos(lat * Math.PI / 180);
+const xs = points.map(p => p[0] * correction), ys = points.map(p => p[1]);
+const west = Math.min(...xs), east = Math.max(...xs), south = Math.min(...ys), north = Math.max(...ys);
+const scale = Math.min(720 / (east - west), 350 / (north - south));
+const xOffset = 40 + (720 - (east - west) * scale) / 2;
+const yOffset = 65 + (350 - (north - south) * scale) / 2;
+const escape = value => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
+const shapes = features.map(f => {
+  const polygons = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.type === "MultiPolygon" ? f.geometry.coordinates : [];
+  return polygons.map(poly => `<path fill-rule="evenodd" d="${poly.map(ring => ring.map((p, i) => `${i ? "L" : "M"}${(xOffset + (p[0] * correction - west) * scale).toFixed(2)},${(yOffset + (north - p[1]) * scale).toFixed(2)}`).join(" ") + " Z").join(" ")}"/>`).join("");
+}).join("");
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" role="img"><title>${escape(project.title)}: analysis extent</title><rect width="800" height="480" fill="#f5f8fa"/><text x="32" y="35" font-size="19" font-family="sans-serif" fill="#162d3a">${escape(project.location)} · ${project.analysisYear || "CBS"}</text><g fill="#087f8c" stroke="#f5f8fa" stroke-width="0.7">${shapes}</g><text x="32" y="448" font-size="14" font-family="sans-serif" fill="#334a55">CBS / PDOK · ${features.length} areas · Geometry preview, no indicator values</text><text x="32" y="470" font-size="12" font-family="sans-serif" fill="#334a55">Source retrieved ${new Date().toISOString().slice(0,10)} · CC BY 4.0</text></svg>`;
+await mkdir("docs/assets/projects", { recursive: true });
+await sharp(Buffer.from(svg)).png({ palette: true, colours: 32 }).toFile(path.join("docs/assets/projects", `${slug}.png`));
+console.log(`Preview: ${slug}, ${features.length} areas`);
