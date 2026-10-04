@@ -1,0 +1,73 @@
+{
+  "featured": "video",
+  "outputs": [
+    {
+      "id": "video",
+      "title": "TikTok route video · 9:16",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "path": "video-story.json",
+      "primary": true,
+      "description": "Open the 48.5-second vertical globe → route-follow → photo-stop story and export MP4 or WebM.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2",
+        "media-recorder"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "map",
+      "title": "Interactive 3D route",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "description": "Open the same route and viewpoints as an interactive GeoLibre project.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "story",
+      "title": "Scenic route story",
+      "kind": "story",
+      "mode": "deep-link",
+      "output": "story",
+      "description": "Open the Story Map chapters with licensed viewpoint images.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "route-geojson",
+      "title": "Route GeoJSON",
+      "kind": "data",
+      "mode": "repository",
+      "path": "route.geojson",
+      "formats": [
+        "geojson"
+      ],
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    },
+    {
+      "id": "analysis",
+      "title": "Method",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    }
+  ]
+}
