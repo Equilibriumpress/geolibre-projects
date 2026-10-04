@@ -1,0 +1,34 @@
+{
+  "id": "manhattan-buildings-through-time",
+  "title": "Manhattan Buildings Through Time",
+  "summary": "A 3D GeoLibre time animation of Manhattan's building stock, cumulatively replayed by construction year from 1850 to 2025 with MTA subway context.",
+  "status": "published",
+  "location": "Manhattan, New York City, USA",
+  "created": "2026-10-04",
+  "updated": "2026-10-04",
+  "topics": [
+    "urban-growth",
+    "3d",
+    "time-slider",
+    "buildings",
+    "new-york",
+    "video-example"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map",
+    "viewer"
+  ],
+  "outputRegistry": "outputs.json",
+  "question": "How did Manhattan's present-day building stock accumulate over time, and how does that changing skyline read in 3D against the subway network?",
+  "interpretation": "The Time Slider filters the current building-footprint dataset cumulatively by construction year. Building height is derived from the surveyed roof-height field; colors group buildings into broad construction eras.",
+  "limitations": [
+    "This is a replay of the construction-year attribute in the current building-footprint dataset, not a historical reconstruction of demolished buildings.",
+    "Buildings with missing or zero construction year are excluded from the time animation.",
+    "The project uses live public NYC and MTA endpoints, so availability and field schemas can change.",
+    "The upstream GeoLibre showcase uses hosted vector tiles; this repository version intentionally uses authoritative public source endpoints to avoid committing expiring signed tile URLs."
+  ]
+}
