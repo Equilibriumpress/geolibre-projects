@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "id": "pdok-bag",
+      "name": "Basisregistratie Adressen en Gebouwen (BAG) OGC API",
+      "publisher": "Kadaster / PDOK",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2",
+      "retrieved": "2026-10-08",
+      "license": "Public Domain Mark 1.0",
+      "role": "Authoritative building source. The project uses BAG building geometry and the recorded bouwjaar, gebruiksdoel, status and identification attributes."
+    },
+    {
+      "id": "pdok-bag-pand-schema",
+      "name": "BAG Pand schema",
+      "publisher": "Kadaster / PDOK",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2/collections/pand/schema?f=html",
+      "retrieved": "2026-10-08",
+      "license": "Public Domain Mark 1.0",
+      "role": "Field contract for pand attributes including bouwjaar, gebruiksdoel, geometry, identificatie and status."
+    },
+    {
+      "id": "pdok-bag-vector-tiles",
+      "name": "BAG Vector Tiles · WebMercatorQuad",
+      "publisher": "Kadaster / PDOK",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2/tiles/WebMercatorQuad/{z}/{y}/{x}?f=mvt",
+      "retrieved": "2026-10-08",
+      "license": "Public Domain Mark 1.0",
+      "role": "Scalable building rendering for the interactive cumulative construction-year timeline."
+    },
+    {
+      "id": "pdok-3d-basisvoorziening",
+      "name": "3D Basisvoorziening · 3D Objecten Gebouwen en Terreinen",
+      "publisher": "Kadaster / PDOK",
+      "url": "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/basisbestand_gebouwen_terreinen?f=html",
+      "retrieved": "2026-10-08",
+      "license": "CC BY 4.0",
+      "role": "Official Dutch 3D reference for buildings, terrain, water and roads. The collection advertises CityJSON downloads and building attributes such as BAG pand id and construction year."
+    },
+    {
+      "id": "3dbag-lod22",
+      "name": "3DBAG Netherlands · LoD 2.2",
+      "publisher": "3DBAG by tudelft3d and 3DGI",
+      "url": "https://data.3dbag.nl/v20250903/cesium3dtiles/lod22/tileset.json",
+      "retrieved": "2026-10-08",
+      "license": "CC BY 4.0",
+      "role": "3D Tiles rendering companion used by GeoLibre's Cesium flyover output."
+    }
+  ]
+}
