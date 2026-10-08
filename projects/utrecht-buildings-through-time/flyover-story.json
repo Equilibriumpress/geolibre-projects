@@ -1,0 +1,155 @@
+{
+  "version": "0.1.0",
+  "title": "Utrecht in 3D · from historic core to recent expansion",
+  "preset": "standard",
+  "aspectRatio": "16:9",
+  "fps": 30,
+  "output": {
+    "bitrateMbps": 20,
+    "includeBranding": true
+  },
+  "scenes": [
+    {
+      "id": "globe",
+      "type": "title",
+      "durationMs": 3000,
+      "headline": "The Netherlands",
+      "subhead": "Start at national scale",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.29,
+          52.13
+        ],
+        "zoom": 1.8,
+        "pitch": 8,
+        "bearing": 0,
+        "transitionMs": 2200
+      }
+    },
+    {
+      "id": "utrecht",
+      "type": "map",
+      "durationMs": 4500,
+      "headline": "Utrecht",
+      "subhead": "Move into the city",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 11.6,
+        "pitch": 46,
+        "bearing": -12,
+        "transitionMs": 3300
+      }
+    },
+    {
+      "id": "binnenstad",
+      "type": "map",
+      "durationMs": 5000,
+      "headline": "Binnenstad",
+      "subhead": "Historic core",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1211,
+          52.0908
+        ],
+        "zoom": 15.3,
+        "pitch": 72,
+        "bearing": 25,
+        "transitionMs": 3500
+      },
+      "cues": [
+        {
+          "kind": "layer",
+          "atMs": 0,
+          "layerId": "3dbag-netherlands-lod22",
+          "visible": true,
+          "opacity": 1
+        },
+        {
+          "kind": "annotation",
+          "atMs": 2800,
+          "text": "Binnenstad",
+          "position": "center",
+          "source": "3DBAG"
+        }
+      ]
+    },
+    {
+      "id": "kanaleneiland",
+      "type": "map",
+      "durationMs": 5500,
+      "headline": "Kanaleneiland",
+      "subhead": "Post-war expansion",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.0868,
+          52.0687
+        ],
+        "zoom": 15,
+        "pitch": 72,
+        "bearing": -35,
+        "transitionMs": 3800
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 3200,
+          "text": "Kanaleneiland",
+          "position": "center",
+          "source": "3DBAG"
+        }
+      ]
+    },
+    {
+      "id": "leidsche-rijn",
+      "type": "map",
+      "durationMs": 5500,
+      "headline": "Leidsche Rijn",
+      "subhead": "Recent westward growth",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.0345,
+          52.096
+        ],
+        "zoom": 14.8,
+        "pitch": 71,
+        "bearing": 30,
+        "transitionMs": 3800
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 3200,
+          "text": "Leidsche Rijn",
+          "position": "center",
+          "source": "3DBAG"
+        }
+      ]
+    },
+    {
+      "id": "finish",
+      "type": "conclusion",
+      "durationMs": 4000,
+      "headline": "Read the city in layers of time",
+      "subhead": "Return to the BAG Time Slider for construction years",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 12.2,
+        "pitch": 48,
+        "bearing": 0,
+        "transitionMs": 2500
+      }
+    }
+  ]
+}
