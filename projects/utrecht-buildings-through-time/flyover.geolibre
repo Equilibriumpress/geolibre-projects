@@ -1,0 +1,81 @@
+{
+  "version": "0.1.0",
+  "name": "Utrecht Buildings Through Time · 3D flyover",
+  "mapView": {
+    "center": [
+      5.1214,
+      52.0907
+    ],
+    "zoom": 13.5,
+    "bearing": 22,
+    "pitch": 67
+  },
+  "basemapStyleUrl": "https://tiles.openfreemap.org/styles/positron",
+  "basemapVisible": true,
+  "basemapOpacity": 1,
+  "primaryRenderer": "cesium",
+  "layers": [
+    {
+      "id": "3dbag-netherlands-lod22",
+      "name": "3DBAG Netherlands · LoD 2.2",
+      "type": "3d-tiles",
+      "source": {
+        "type": "3d-tiles",
+        "url": "https://data.3dbag.nl/v20250903/cesium3dtiles/lod22/tileset.json",
+        "sourceId": "3dbag-netherlands-lod22",
+        "altitudeOffset": -43,
+        "attribution": "© 3DBAG by tudelft3d and 3DGI"
+      },
+      "sourcePath": "https://data.3dbag.nl/v20250903/cesium3dtiles/lod22/tileset.json",
+      "visible": true,
+      "opacity": 1,
+      "style": {
+        "minZoom": 0,
+        "maxZoom": 24,
+        "fillColor": "#d7a24b",
+        "strokeColor": "#7c5a2c",
+        "strokeWidth": 1,
+        "strokeWidthUnit": "pixels",
+        "fillOpacity": 1,
+        "circleRadius": 6,
+        "rasterBrightnessMin": 0,
+        "rasterBrightnessMax": 1,
+        "rasterSaturation": 0,
+        "rasterContrast": 0,
+        "rasterHueRotate": 0
+      },
+      "metadata": {
+        "sourceKind": "3d-tiles-url",
+        "externalNativeLayer": true,
+        "identifiable": false,
+        "customLayerType": "3d-tiles",
+        "sourceId": "3dbag-netherlands-lod22",
+        "nativeLayerIds": [
+          "3dbag-netherlands-lod22"
+        ],
+        "layerName": "3DBAG Netherlands · LoD 2.2",
+        "altitudeOffset": -43,
+        "panelCollapsed": true,
+        "publisher": "3DBAG by tudelft3d and 3DGI",
+        "license": "CC BY 4.0",
+        "version": "v2025.09.03"
+      }
+    }
+  ],
+  "styles": {},
+  "interaction": {
+    "identify": null,
+    "controls": {
+      "search": false,
+      "scale": true,
+      "attribution": true
+    }
+  },
+  "metadata": {
+    "repositoryProject": true,
+    "projectId": "utrecht-buildings-through-time",
+    "showcase": "netherlands-utrecht-binnenstad-kanaleneiland-leidsche-rijn",
+    "provenance": "sources.json",
+    "note": "Dedicated Cesium workspace. 3DBAG is the browser 3D Tiles companion; PDOK 3D Basisvoorziening remains the official Dutch 3D reference in sources.json."
+  }
+}
