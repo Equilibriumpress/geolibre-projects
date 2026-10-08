@@ -1,0 +1,94 @@
+{
+  "featured": "time-map",
+  "outputs": [
+    {
+      "id": "time-map",
+      "title": "Buildings through time",
+      "kind": "map",
+      "mode": "deep-link",
+      "output": "map",
+      "primary": true,
+      "description": "Open the BAG construction-year map with the cumulative Time Slider ready for Utrecht.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "story",
+      "title": "How Utrecht grew",
+      "kind": "story",
+      "mode": "deep-link",
+      "output": "story",
+      "primary": false,
+      "description": "Follow the historic centre, nineteenth-century growth, post-war expansion and Leidsche Rijn as one map story.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "dashboard",
+      "title": "Building-age dashboard · central sample",
+      "kind": "dashboard",
+      "mode": "deep-link",
+      "output": "dashboard",
+      "primary": false,
+      "description": "Inspect construction years and use functions for the explicitly bounded central-Utrecht BAG sample.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "view"
+    },
+    {
+      "id": "vertical-video",
+      "title": "Utrecht grows · 9:16",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "path": "video-story.json",
+      "primary": false,
+      "description": "Prepare the 30-second vertical Buildings Through Time timeline.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "flyover",
+      "title": "Globe → Utrecht → districts · 3D",
+      "kind": "video",
+      "mode": "deep-link",
+      "output": "video",
+      "project": "flyover.geolibre",
+      "path": "flyover-story.json",
+      "primary": false,
+      "description": "Open the Cesium 3D flyover from the Netherlands to the Binnenstad, Kanaleneiland and Leidsche Rijn.",
+      "availability": "runtime",
+      "requires": [
+        "project",
+        "webgl2"
+      ],
+      "action": "prepare-export"
+    },
+    {
+      "id": "analysis",
+      "title": "Method & classification",
+      "kind": "analysis",
+      "mode": "repository",
+      "path": "analysis.sql",
+      "primary": false,
+      "availability": "published",
+      "requires": [],
+      "action": "view"
+    }
+  ]
+}
