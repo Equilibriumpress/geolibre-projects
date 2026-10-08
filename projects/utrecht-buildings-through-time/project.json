@@ -1,0 +1,41 @@
+{
+  "id": "utrecht-buildings-through-time",
+  "title": "Netherlands Buildings Through Time · Utrecht",
+  "summary": "Replays Utrecht's present-day BAG building stock by recorded construction year, with an interactive time map, a focused dashboard sample, the Story Map “How Utrecht grew”, a 3D flyover and a vertical video.",
+  "status": "published",
+  "location": "Utrecht, Netherlands",
+  "created": "2026-10-08",
+  "updated": "2026-10-08",
+  "topics": [
+    "urban-growth",
+    "buildings",
+    "time-slider",
+    "3d",
+    "storymap",
+    "utrecht",
+    "pdok"
+  ],
+  "project": "project.geolibre",
+  "analysis": "analysis.sql",
+  "sources": "sources.json",
+  "dataPolicy": "remote-first",
+  "outputs": [
+    "interactive-map",
+    "viewer",
+    "dashboard",
+    "storymap",
+    "video"
+  ],
+  "outputRegistry": "outputs.json",
+  "videoStory": "video-story.json",
+  "question": "How did Utrecht's present-day building stock accumulate over time according to the BAG construction-year attribute, and how does that pattern differ between the historic centre, Kanaleneiland and Leidsche Rijn?",
+  "interpretation": "The cumulative timeline reveals the recorded construction years of buildings that exist in the current BAG stock. Older concentrations are strongest in and around the historic centre, while later urban expansion becomes visible in post-war and recent districts.",
+  "limitations": [
+    "This is a replay of construction year in the current BAG building stock, not a complete reconstruction of historical Utrecht: demolished buildings are not recreated.",
+    "Buildings with status 'Pand gesloopt' are filtered from the main visual layer.",
+    "The dashboard uses a bounded central-Utrecht BAG Features sample and is explicitly a local sample, not a municipality-wide building census.",
+    "PDOK BAG vector tiles are the scalable time-map source. Detailed building geometry becomes the main visual only at close urban zoom levels.",
+    "The 3D showcase uses the established 3DBAG 3D Tiles endpoint as a browser rendering companion. PDOK 3D Basisvoorziening is recorded as the official Dutch 3D reference but its CityJSON download path is not the GeoLibre 3D Tiles runtime path."
+  ],
+  "analysisYear": 2026
+}

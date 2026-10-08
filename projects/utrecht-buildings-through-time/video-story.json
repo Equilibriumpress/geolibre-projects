@@ -1,0 +1,299 @@
+{
+  "version": "0.1.0",
+  "title": "How Utrecht grew",
+  "preset": "tiktok",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "output": {
+    "bitrateMbps": 20,
+    "showSafeArea": true,
+    "includeBranding": true
+  },
+  "scenes": [
+    {
+      "id": "netherlands",
+      "type": "title",
+      "durationMs": 2500,
+      "headline": "How did Utrecht grow?",
+      "subhead": "BAG construction years · current building stock",
+      "transition": "cut",
+      "camera": {
+        "center": [
+          5.29,
+          52.13
+        ],
+        "zoom": 5.8,
+        "pitch": 12,
+        "bearing": 0,
+        "transitionMs": 0
+      },
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 900,
+          "text": "Netherlands → Utrecht → buildings through time",
+          "position": "bottom",
+          "source": "Kadaster / PDOK BAG"
+        }
+      ]
+    },
+    {
+      "id": "utrecht",
+      "type": "map",
+      "durationMs": 3500,
+      "headline": "Utrecht",
+      "subhead": "Move from national context to the city",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 12,
+        "pitch": 38,
+        "bearing": -12,
+        "transitionMs": 2700
+      }
+    },
+    {
+      "id": "year-1700",
+      "type": "highlight",
+      "durationMs": 3000,
+      "headline": "1700",
+      "subhead": "The oldest surviving stock clusters around the historic centre",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 1700,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1211,
+          52.0908
+        ],
+        "zoom": 17.2,
+        "pitch": 57,
+        "bearing": -18,
+        "transitionMs": 1900
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 1700
+        },
+        {
+          "kind": "annotation",
+          "atMs": 1200,
+          "text": "Current BAG stock built by 1700",
+          "position": "bottom",
+          "source": "PDOK BAG"
+        }
+      ]
+    },
+    {
+      "id": "year-1850",
+      "type": "highlight",
+      "durationMs": 3000,
+      "headline": "1850",
+      "subhead": "The built-up city begins to extend beyond the oldest core",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 1850,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1188,
+          52.092
+        ],
+        "zoom": 17.1,
+        "pitch": 58,
+        "bearing": 12,
+        "transitionMs": 1800
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 1850
+        }
+      ]
+    },
+    {
+      "id": "year-1900",
+      "type": "highlight",
+      "durationMs": 3000,
+      "headline": "1900",
+      "subhead": "Nineteenth-century expansion fills in around the centre",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 1900,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1158,
+          52.0942
+        ],
+        "zoom": 17.1,
+        "pitch": 60,
+        "bearing": 22,
+        "transitionMs": 1800
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 1900
+        }
+      ]
+    },
+    {
+      "id": "year-1950",
+      "type": "highlight",
+      "durationMs": 3000,
+      "headline": "1950",
+      "subhead": "The pre-war city is in place",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 1950,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.103,
+          52.086
+        ],
+        "zoom": 17,
+        "pitch": 60,
+        "bearing": -15,
+        "transitionMs": 1800
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 1950
+        }
+      ]
+    },
+    {
+      "id": "year-2000",
+      "type": "highlight",
+      "durationMs": 3500,
+      "headline": "2000",
+      "subhead": "Post-war districts transform the city's footprint",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 2000,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.0868,
+          52.0687
+        ],
+        "zoom": 17.1,
+        "pitch": 62,
+        "bearing": -30,
+        "transitionMs": 2200
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 2000
+        },
+        {
+          "kind": "annotation",
+          "atMs": 1800,
+          "text": "Kanaleneiland",
+          "position": "center",
+          "source": "Utrecht location context"
+        }
+      ]
+    },
+    {
+      "id": "present",
+      "type": "highlight",
+      "durationMs": 4000,
+      "headline": "Now",
+      "subhead": "Recent growth shifts west into Leidsche Rijn",
+      "layerId": "utrecht-bag-buildings",
+      "field": "bouwjaar",
+      "threshold": 2026,
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.0345,
+          52.096
+        ],
+        "zoom": 17.1,
+        "pitch": 63,
+        "bearing": 30,
+        "transitionMs": 2500
+      },
+      "cues": [
+        {
+          "kind": "highlight",
+          "atMs": 0,
+          "layerId": "utrecht-bag-buildings",
+          "field": "bouwjaar",
+          "operator": "<=",
+          "value": 2026
+        },
+        {
+          "kind": "annotation",
+          "atMs": 2100,
+          "text": "Leidsche Rijn",
+          "position": "center",
+          "source": "Utrecht location context"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "type": "conclusion",
+      "durationMs": 3500,
+      "headline": "One city, many building eras",
+      "subhead": "Explore the full Time Slider and Story Map",
+      "transition": "fly",
+      "camera": {
+        "center": [
+          5.1214,
+          52.0907
+        ],
+        "zoom": 12.2,
+        "pitch": 36,
+        "bearing": 0,
+        "transitionMs": 2300
+      },
+      "caption": "Netherlands Buildings Through Time · Utrecht",
+      "cues": [
+        {
+          "kind": "annotation",
+          "atMs": 1600,
+          "text": "Current-stock replay, not a demolished-building reconstruction",
+          "position": "bottom",
+          "source": "GeoLibre methodology"
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "music": "",
+    "musicVolume": 0,
+    "narrationVolume": 1
+  }
+}
